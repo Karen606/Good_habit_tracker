@@ -23,8 +23,8 @@
                                 <color key="textColor" name="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good habits make time your ally" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM5-aP-Oja">
-                                <rect key="frame" x="16" y="203" width="361" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good habits make time your ally" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM5-aP-Oja">
+                                <rect key="frame" x="8" y="203" width="377" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" name="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -61,13 +61,13 @@
                             <constraint firstItem="TM5-aP-Oja" firstAttribute="top" secondItem="h1f-kg-3gN" secondAttribute="bottom" constant="33" id="2n8-dt-P0h"/>
                             <constraint firstItem="8Id-gf-VTS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="39S-PF-w4K"/>
                             <constraint firstItem="h1f-kg-3gN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="91" id="FAA-BA-1yP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TM5-aP-Oja" secondAttribute="trailing" constant="16" id="GjN-WM-BGo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TM5-aP-Oja" secondAttribute="trailing" constant="8" id="GjN-WM-BGo"/>
                             <constraint firstItem="h1f-kg-3gN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NQL-Qn-Nbf"/>
                             <constraint firstItem="TM5-aP-Oja" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NkN-XU-45i"/>
                             <constraint firstItem="AkX-Df-ycH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8Id-gf-VTS" secondAttribute="bottom" constant="24" id="ZCj-Hu-uiX"/>
                             <constraint firstItem="8Id-gf-VTS" firstAttribute="top" secondItem="TM5-aP-Oja" secondAttribute="bottom" constant="50" id="dVB-6q-B6l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AkX-Df-ycH" secondAttribute="trailing" constant="44" id="ezu-6v-pge"/>
-                            <constraint firstItem="TM5-aP-Oja" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rAg-jj-F9k"/>
+                            <constraint firstItem="TM5-aP-Oja" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="rAg-jj-F9k"/>
                             <constraint firstItem="AkX-Df-ycH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="veo-WG-Wew"/>
                         </constraints>
                     </view>
@@ -85,16 +85,16 @@
     <resources>
         <image name="rootIcon" width="319" height="319"/>
         <namedColor name="background">
-            <color red="0.99999994039535522" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="basePurple">
-            <color red="0.47843137254901957" green="0.40000000000000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.4779999852180481" green="0.40000000596046448" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="whiteText">
-            <color red="0.99999994039535522" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

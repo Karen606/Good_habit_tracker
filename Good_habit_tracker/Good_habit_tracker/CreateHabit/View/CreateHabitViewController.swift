@@ -10,6 +10,7 @@ import Combine
 
 class CreateHabitViewController: UIViewController {
     @IBOutlet weak var habitsCollectionView: UICollectionView!
+    @IBOutlet weak var examplesLabel: UILabel!
     private let viewModel = CreateHabitViewModel.shared
     private var cancellables: Set<AnyCancellable> = []
 
@@ -38,15 +39,16 @@ class CreateHabitViewController: UIViewController {
     func subscribe() {
         viewModel.$habits
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] partyModel in
+            .sink { [weak self] habits in
                 guard let self = self else { return }
+                self.examplesLabel.isHidden = habits.isEmpty
                 self.habitsCollectionView.reloadData()
             }
             .store(in: &cancellables)
     }
     
     @IBAction func clickedCreateHabit(_ sender: UIButton) {
-        
+        self.pushViewController(HabitFormViewController.self)
     }
     
     @IBAction func clickedNext(_ sender: UIButton) {

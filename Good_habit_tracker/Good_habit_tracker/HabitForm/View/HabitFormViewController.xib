@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+        <array key="MontserratAlternates-Medium.ttf">
+            <string>MontserratAlternates-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HabitFormViewController" customModule="Good_habit_tracker" customModuleProvider="target">
+            <connections>
+                <outlet property="habitTextField" destination="ThE-A7-zU0" id="w8J-sF-1oZ"/>
+                <outlet property="nextButton" destination="Qc6-O8-mMm" id="o5s-IC-llI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="dayButtons" destination="2Tq-SG-I3v" collectionClass="NSMutableArray" id="jRJ-cu-lBh"/>
+                <outletCollection property="dayButtons" destination="xRU-Ts-yef" collectionClass="NSMutableArray" id="gKs-Dr-fhO"/>
+                <outletCollection property="dayButtons" destination="hwI-Am-3Gv" collectionClass="NSMutableArray" id="dyJ-h9-qni"/>
+                <outletCollection property="dayButtons" destination="iep-Ec-rQW" collectionClass="NSMutableArray" id="7pD-jz-xHX"/>
+                <outletCollection property="dayButtons" destination="kZg-s1-ShG" collectionClass="NSMutableArray" id="dqT-2P-e6k"/>
+                <outletCollection property="dayButtons" destination="2IN-EW-yZx" collectionClass="NSMutableArray" id="L8z-Fg-umf"/>
+                <outletCollection property="dayButtons" destination="TzX-YF-pIp" collectionClass="NSMutableArray" id="xUd-Ov-xer"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="E44-FT-EEc">
+                    <rect key="frame" x="8" y="83" width="374" height="81.666666666666686"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X99-lI-jv3">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnb-T7-mts">
+                                    <rect key="frame" x="6" y="0.0" width="38" height="22.666666666666668"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tq-SG-I3v" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="31.666666666666671" width="50" height="50"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="3y5-OV-mru"/>
+                                        <constraint firstAttribute="width" secondItem="2Tq-SG-I3v" secondAttribute="height" multiplier="1:1" id="aGM-fN-LeP"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="2Tq-SG-I3v" firstAttribute="leading" secondItem="X99-lI-jv3" secondAttribute="leading" id="0b5-FY-5r2"/>
+                                <constraint firstAttribute="trailing" secondItem="2Tq-SG-I3v" secondAttribute="trailing" id="9RL-jS-ObY"/>
+                                <constraint firstItem="2Tq-SG-I3v" firstAttribute="top" secondItem="bnb-T7-mts" secondAttribute="bottom" constant="9" id="Yss-pw-2MT"/>
+                                <constraint firstItem="bnb-T7-mts" firstAttribute="top" secondItem="X99-lI-jv3" secondAttribute="top" id="udp-mh-YqF"/>
+                                <constraint firstItem="bnb-T7-mts" firstAttribute="centerX" secondItem="X99-lI-jv3" secondAttribute="centerX" id="vKo-Fg-yVD"/>
+                                <constraint firstAttribute="bottom" secondItem="2Tq-SG-I3v" secondAttribute="bottom" id="zlg-Cf-Cg4"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxs-h5-Lhn">
+                            <rect key="frame" x="54" y="0.0" width="50" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCn-yh-Alk">
+                                    <rect key="frame" x="11.666666666666671" y="0.0" width="27" height="22.666666666666668"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRU-Ts-yef" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="31.666666666666671" width="50" height="50"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="xRU-Ts-yef" secondAttribute="height" multiplier="1:1" id="Zje-m6-zbZ"/>
+                                        <constraint firstAttribute="width" constant="50" id="cAC-Tn-13G"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="xRU-Ts-yef" secondAttribute="bottom" id="3fy-ne-H3L"/>
+                                <constraint firstItem="JCn-yh-Alk" firstAttribute="top" secondItem="kxs-h5-Lhn" secondAttribute="top" id="Hue-U3-sco"/>
+                                <constraint firstAttribute="trailing" secondItem="xRU-Ts-yef" secondAttribute="trailing" id="Sk9-Kg-tHF"/>
+                                <constraint firstItem="xRU-Ts-yef" firstAttribute="top" secondItem="JCn-yh-Alk" secondAttribute="bottom" constant="9" id="fO5-NN-lyr"/>
+                                <constraint firstItem="xRU-Ts-yef" firstAttribute="leading" secondItem="kxs-h5-Lhn" secondAttribute="leading" id="hXF-uF-Clt"/>
+                                <constraint firstItem="JCn-yh-Alk" firstAttribute="centerX" secondItem="kxs-h5-Lhn" secondAttribute="centerX" id="t0j-gO-Kd8"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yc-d9-wpZ">
+                            <rect key="frame" x="108" y="0.0" width="50" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IZH-Nl-Sdd">
+                                    <rect key="frame" x="7.6666666666666714" y="0.0" width="34.666666666666664" height="22.666666666666668"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwI-Am-3Gv" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="31.666666666666671" width="50" height="50"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="50" id="Ect-5d-mnj"/>
+                                        <constraint firstAttribute="width" secondItem="hwI-Am-3Gv" secondAttribute="height" multiplier="1:1" id="P2E-Hv-HH6"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="hwI-Am-3Gv" secondAttribute="bottom" id="03J-5y-3zB"/>
+                                <constraint firstItem="IZH-Nl-Sdd" firstAttribute="centerX" secondItem="5yc-d9-wpZ" secondAttribute="centerX" id="6CH-TR-sNc"/>
+                                <constraint firstItem="IZH-Nl-Sdd" firstAttribute="top" secondItem="5yc-d9-wpZ" secondAttribute="top" id="bl4-PX-nOk"/>
+                                <constraint firstItem="hwI-Am-3Gv" firstAttribute="top" secondItem="IZH-Nl-Sdd" secondAttribute="bottom" constant="9" id="qq1-L2-l1G"/>
+                                <constraint firstAttribute="trailing" secondItem="hwI-Am-3Gv" secondAttribute="trailing" id="wZ9-K6-uF3"/>
+                                <constraint firstItem="hwI-Am-3Gv" firstAttribute="leading" secondItem="5yc-d9-wpZ" secondAttribute="leading" id="xqM-kQ-j5a"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2f7-1B-Eaf">
+                            <rect key="frame" x="162" y="0.0" width="50" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOr-jp-hdc">
+                                    <rect key="frame" x="10.999999999999998" y="0.0" width="28.333333333333329" height="22.666666666666668"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iep-Ec-rQW" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="31.666666666666671" width="50" height="50"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="iep-Ec-rQW" secondAttribute="height" multiplier="1:1" id="OpC-bp-Z1P"/>
+                                        <constraint firstAttribute="width" constant="50" id="SOL-VT-xBi"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="WOr-jp-hdc" firstAttribute="top" secondItem="2f7-1B-Eaf" secondAttribute="top" id="6oO-hG-mIW"/>
+                                <constraint firstItem="WOr-jp-hdc" firstAttribute="centerX" secondItem="2f7-1B-Eaf" secondAttribute="centerX" id="XKv-TZ-yMj"/>
+                                <constraint firstItem="iep-Ec-rQW" firstAttribute="top" secondItem="WOr-jp-hdc" secondAttribute="bottom" constant="9" id="hkT-hG-RUw"/>
+                                <constraint firstAttribute="trailing" secondItem="iep-Ec-rQW" secondAttribute="trailing" id="ihw-Q0-YLG"/>
+                                <constraint firstAttribute="bottom" secondItem="iep-Ec-rQW" secondAttribute="bottom" id="rbK-vU-t56"/>
+                                <constraint firstItem="iep-Ec-rQW" firstAttribute="leading" secondItem="2f7-1B-Eaf" secondAttribute="leading" id="uWX-jU-wau"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0Y-gE-iYS">
+                            <rect key="frame" x="216" y="0.0" width="50" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCm-tL-BQw">
+                                    <rect key="frame" x="16.333333333333343" y="0.0" width="17.333333333333329" height="22.666666666666668"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZg-s1-ShG" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="31.666666666666671" width="50" height="50"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="kZg-s1-ShG" secondAttribute="height" multiplier="1:1" id="92h-Be-11X"/>
+                                        <constraint firstAttribute="width" constant="50" id="g0z-c0-52h"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="kZg-s1-ShG" secondAttribute="bottom" id="0YQ-P4-dLT"/>
+                                <constraint firstItem="kZg-s1-ShG" firstAttribute="leading" secondItem="F0Y-gE-iYS" secondAttribute="leading" id="Buj-qS-xxV"/>
+                                <constraint firstItem="FCm-tL-BQw" firstAttribute="top" secondItem="F0Y-gE-iYS" secondAttribute="top" id="CM9-ZL-Prc"/>
+                                <constraint firstItem="FCm-tL-BQw" firstAttribute="centerX" secondItem="F0Y-gE-iYS" secondAttribute="centerX" id="L0a-kv-aKp"/>
+                                <constraint firstItem="kZg-s1-ShG" firstAttribute="top" secondItem="FCm-tL-BQw" secondAttribute="bottom" constant="9" id="VJk-00-f3i"/>
+                                <constraint firstAttribute="trailing" secondItem="kZg-s1-ShG" secondAttribute="trailing" id="mwA-x6-Zpn"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qlx-Mv-cFC">
+                            <rect key="frame" x="270" y="0.0" width="50" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MA1-dq-DCj">
+                                    <rect key="frame" x="13" y="0.0" width="24" height="22.666666666666668"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IN-EW-yZx" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="31.666666666666671" width="50" height="50"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="2IN-EW-yZx" secondAttribute="height" multiplier="1:1" id="EOp-4V-Jv0"/>
+                                        <constraint firstAttribute="width" constant="50" id="OYT-IZ-IX3"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="MA1-dq-DCj" firstAttribute="top" secondItem="qlx-Mv-cFC" secondAttribute="top" id="KOc-zA-VJT"/>
+                                <constraint firstItem="2IN-EW-yZx" firstAttribute="leading" secondItem="qlx-Mv-cFC" secondAttribute="leading" id="ONt-pg-scI"/>
+                                <constraint firstAttribute="trailing" secondItem="2IN-EW-yZx" secondAttribute="trailing" id="cAF-52-brf"/>
+                                <constraint firstItem="MA1-dq-DCj" firstAttribute="centerX" secondItem="qlx-Mv-cFC" secondAttribute="centerX" id="jD5-kX-7QE"/>
+                                <constraint firstItem="2IN-EW-yZx" firstAttribute="top" secondItem="MA1-dq-DCj" secondAttribute="bottom" constant="9" id="neZ-DW-3De"/>
+                                <constraint firstAttribute="bottom" secondItem="2IN-EW-yZx" secondAttribute="bottom" id="wWr-ed-lcw"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t5O-ep-aeW">
+                            <rect key="frame" x="324" y="0.0" width="50" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s4g-Li-ivP">
+                                    <rect key="frame" x="10.333333333333316" y="0.0" width="29.666666666666671" height="22.666666666666668"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzX-YF-pIp" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="31.666666666666671" width="50" height="50"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="TzX-YF-pIp" secondAttribute="height" multiplier="1:1" id="Vag-wd-W4R"/>
+                                        <constraint firstAttribute="width" constant="50" id="cR2-4V-Xdz"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="TzX-YF-pIp" firstAttribute="leading" secondItem="t5O-ep-aeW" secondAttribute="leading" id="7XO-DA-pRL"/>
+                                <constraint firstItem="s4g-Li-ivP" firstAttribute="centerX" secondItem="t5O-ep-aeW" secondAttribute="centerX" id="D8H-2g-D7Z"/>
+                                <constraint firstItem="s4g-Li-ivP" firstAttribute="top" secondItem="t5O-ep-aeW" secondAttribute="top" id="Mb8-Fn-Q9O"/>
+                                <constraint firstAttribute="trailing" secondItem="TzX-YF-pIp" secondAttribute="trailing" id="p0G-sk-ObJ"/>
+                                <constraint firstAttribute="bottom" secondItem="TzX-YF-pIp" secondAttribute="bottom" id="pDG-bE-XdN"/>
+                                <constraint firstItem="TzX-YF-pIp" firstAttribute="top" secondItem="s4g-Li-ivP" secondAttribute="bottom" constant="9" id="vFZ-61-Pnx"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter habit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ThE-A7-zU0" customClass="BaseTextField" customModule="Good_habit_tracker" customModuleProvider="target">
+                    <rect key="frame" x="30" y="221" width="333" height="66"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="UAS-Kd-J1L"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qc6-O8-mMm" customClass="BaseButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                    <rect key="frame" x="44" y="736" width="305" height="58"/>
+                    <color key="backgroundColor" name="basePurple"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="58" id="zpz-QA-R1I"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MontserratAlternates-Medium" family="Montserrat Alternates" pointSize="26"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Next">
+                        <color key="titleColor" name="whiteText"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clickedNext:" destination="-1" eventType="touchUpInside" id="1Bg-iS-haJ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="ThE-A7-zU0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="5yO-4A-a2m"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ThE-A7-zU0" secondAttribute="trailing" constant="30" id="8cO-3c-zZl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Qc6-O8-mMm" secondAttribute="bottom" constant="24" id="B18-SO-SMN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qc6-O8-mMm" secondAttribute="trailing" constant="44" id="IqF-28-jfO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="E44-FT-EEc" secondAttribute="trailing" constant="11" id="Kt3-Ua-bGf"/>
+                <constraint firstItem="E44-FT-EEc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="LVA-8C-Coz"/>
+                <constraint firstItem="ThE-A7-zU0" firstAttribute="top" secondItem="E44-FT-EEc" secondAttribute="bottom" constant="56.333333333333314" id="hH5-69-jHq"/>
+                <constraint firstItem="Qc6-O8-mMm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="44" id="uiz-n5-z01"/>
+                <constraint firstItem="E44-FT-EEc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="xjd-fa-j1f"/>
+            </constraints>
+            <point key="canvasLocation" x="-43.511450381679388" y="-12.67605633802817"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="basePurple">
+            <color red="0.4779999852180481" green="0.40000000596046448" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="baseYelow">
+            <color red="0.95300000905990601" green="1" blue="0.51399999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

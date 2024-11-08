@@ -39,7 +39,6 @@ class HomeViewController: UIViewController {
         self.setNaviagtionArchiveButton(image: .archive)
         titleLabels.forEach({ $0.font = .montserratRegular(size: 16) })
         dayButtons.forEach({ $0.titleLabel?.font = .montserratRegular(size: 20) })
-        let currentDay = Date().getCurrentDayString()
         let formatter = DateFormatter()
         formatter.dateFormat = "d"
         for (index, button) in dayButtons.enumerated() {

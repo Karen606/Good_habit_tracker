@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateHabitViewController" customModule="Good_habit_tracker" customModuleProvider="target">
             <connections>
+                <outlet property="examplesLabel" destination="oV5-M3-L0B" id="SAa-fr-zV1"/>
                 <outlet property="habitsCollectionView" destination="jyy-uw-Sah" id="iRZ-h8-saG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -62,7 +63,6 @@
                         <constraint firstAttribute="height" constant="58" id="PWF-gC-wxX"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="MontserratAlternates-Medium" family="Montserrat Alternates" pointSize="26"/>
-                    <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" title="Next">
                         <color key="titleColor" name="whiteText"/>
