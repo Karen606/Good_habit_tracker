@@ -54,7 +54,9 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func clickedAddHabit(_ sender: UIButton) {
+        self.pushViewController(CreateHabitViewController.self)
     }
+    
     @IBAction func clickedCalendar(_ sender: UIButton) {
     }
     @IBAction func clickedSettings(_ sender: UIButton) {
