@@ -14,12 +14,17 @@ extension Date {
         guard let startOfWeek = calendar.dateInterval(of: .weekOfYear, for: self)?.start else {
             return []
         }
-        return (0..<7).compactMap { calendar.date(byAdding: .day, value: $0, to: startOfWeek) }
+        return (0..<7).compactMap { calendar.date(byAdding: .day, value: $0, to: startOfWeek)?.stripTime() }
     }
     
     func getCurrentDayString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "d" // Format to get the day as a string
         return formatter.string(from: self)
+    }
+    
+    func stripTime() -> Date {
+        let calendar = Calendar.current
+        return calendar.startOfDay(for: self)
     }
 }

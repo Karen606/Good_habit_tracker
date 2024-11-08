@@ -19,6 +19,14 @@ class CreateHabitViewModel {
         }
     }
     
+    func saveHabit(habitsModel: [HabitModel], completion: @escaping (Error?) -> Void) {
+        CoreDataManager.shared.saveHabit(habitModels: habitsModel, completion: completion)
+    }
+    
+    func removeHabits(habits: [HabitModel]) {
+        CoreDataManager.shared.removeHabits(habitModels: habits)
+    }
+    
     func clear() {
         
     }

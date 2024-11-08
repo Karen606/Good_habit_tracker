@@ -10,4 +10,5 @@ import Foundation
 struct HabitModel {
     var id: UUID?
     var name: String?
+    var executionDays: [Date] = []
 }

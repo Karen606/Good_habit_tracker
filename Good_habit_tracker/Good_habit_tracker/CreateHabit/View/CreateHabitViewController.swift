@@ -46,8 +46,25 @@ class CreateHabitViewController: UIViewController {
     }
     
     @IBAction func clickedCreateHabit(_ sender: UIButton) {
+        
     }
+    
     @IBAction func clickedNext(_ sender: UIButton) {
+        if let indexSelectedItems = habitsCollectionView.indexPathsForSelectedItems {
+            var habits: [HabitModel] = []
+            for indexPath in indexSelectedItems {
+                habits.append(viewModel.habits[indexPath.item])
+            }
+            viewModel.saveHabit(habitsModel: habits) { [weak self] error in
+                guard let self = self else { return }
+                if let error = error {
+                    self.showErrorAlert(message: error.localizedDescription)
+                } else {
+                    viewModel.removeHabits(habits: habits)
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
     }
 }
 
