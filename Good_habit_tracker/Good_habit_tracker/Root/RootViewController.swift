@@ -21,6 +21,9 @@ class RootViewController: UIViewController {
     }
     
     @IBAction func clickedStart(_ sender: UIButton) {
+        let homeVC = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        let navVC = UINavigationController(rootViewController: homeVC)
+        navVC.setAsRoot()
     }
     
 }

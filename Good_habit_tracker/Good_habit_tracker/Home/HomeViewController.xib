@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_3" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Good_habit_tracker" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomView" destination="9Nw-Hl-aMi" id="Mej-Gj-MRN"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="titleLabels" destination="9lt-TJ-xf0" collectionClass="NSMutableArray" id="4dF-d6-NRq"/>
+                <outletCollection property="titleLabels" destination="JjA-cm-mvR" collectionClass="NSMutableArray" id="S3z-Ry-U5y"/>
+                <outletCollection property="titleLabels" destination="iZM-Ut-wzH" collectionClass="NSMutableArray" id="rse-S3-RXP"/>
+                <outletCollection property="titleLabels" destination="KNy-KA-VQb" collectionClass="NSMutableArray" id="mmf-VR-5Kl"/>
+                <outletCollection property="titleLabels" destination="yaM-0S-LAf" collectionClass="NSMutableArray" id="d95-5d-jbS"/>
+                <outletCollection property="titleLabels" destination="YrS-jF-f6X" collectionClass="NSMutableArray" id="z0R-1p-7c7"/>
+                <outletCollection property="titleLabels" destination="jIR-fg-WyO" collectionClass="NSMutableArray" id="YCL-oZ-izZ"/>
+                <outletCollection property="dayButtons" destination="wCq-W7-uZ4" collectionClass="NSMutableArray" id="iY2-RB-tXs"/>
+                <outletCollection property="dayButtons" destination="brJ-cj-8eO" collectionClass="NSMutableArray" id="uiA-uF-ZvX"/>
+                <outletCollection property="dayButtons" destination="qbg-EE-yRM" collectionClass="NSMutableArray" id="kNo-np-IPI"/>
+                <outletCollection property="dayButtons" destination="B5c-9n-B3A" collectionClass="NSMutableArray" id="MS8-8R-nVa"/>
+                <outletCollection property="dayButtons" destination="wff-eZ-isc" collectionClass="NSMutableArray" id="GJY-Jc-nTy"/>
+                <outletCollection property="dayButtons" destination="YsX-2t-p8A" collectionClass="NSMutableArray" id="3l4-sv-8zp"/>
+                <outletCollection property="dayButtons" destination="ZIZ-aU-Frx" collectionClass="NSMutableArray" id="eQP-hC-I5e"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="874"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="p1V-5F-RJT">
+                    <rect key="frame" x="8" y="86" width="385.66666666666669" height="81.666666666666686"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGO-GH-aJb">
+                            <rect key="frame" x="0.0" y="0.0" width="51.666666666666664" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lt-TJ-xf0">
+                                    <rect key="frame" x="9" y="0.0" width="33.666666666666664" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCq-W7-uZ4" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="29.999999999999996" width="51.666666666666664" height="51.666666666666657"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="51.666666666666664" id="3uQ-TI-WAT"/>
+                                        <constraint firstAttribute="width" secondItem="wCq-W7-uZ4" secondAttribute="height" multiplier="1:1" id="dj9-mD-Nid"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="chooseDay:" destination="-1" eventType="touchUpInside" id="tOs-hJ-G3R"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="wCq-W7-uZ4" secondAttribute="bottom" id="161-Uc-alW"/>
+                                <constraint firstItem="9lt-TJ-xf0" firstAttribute="centerX" secondItem="BGO-GH-aJb" secondAttribute="centerX" id="3IO-FB-WqZ"/>
+                                <constraint firstItem="wCq-W7-uZ4" firstAttribute="leading" secondItem="BGO-GH-aJb" secondAttribute="leading" id="819-Gk-rcW"/>
+                                <constraint firstItem="9lt-TJ-xf0" firstAttribute="top" secondItem="BGO-GH-aJb" secondAttribute="top" id="D0r-Dv-Gzm"/>
+                                <constraint firstAttribute="trailing" secondItem="wCq-W7-uZ4" secondAttribute="trailing" id="IQe-Rg-tmH"/>
+                                <constraint firstItem="wCq-W7-uZ4" firstAttribute="top" secondItem="9lt-TJ-xf0" secondAttribute="bottom" constant="9" id="Lcd-Ui-wqP"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMc-Xp-FIF">
+                            <rect key="frame" x="55.666666666666671" y="0.0" width="51.666666666666671" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JjA-cm-mvR">
+                                    <rect key="frame" x="13.666666666666666" y="0.0" width="24.666666666666671" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brJ-cj-8eO" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="29.999999999999996" width="51.666666666666664" height="51.666666666666657"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="51.666666666666664" id="c1E-A7-J5n"/>
+                                        <constraint firstAttribute="width" secondItem="brJ-cj-8eO" secondAttribute="height" multiplier="1:1" id="wA9-r7-uPS"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="chooseDay:" destination="-1" eventType="touchUpInside" id="Izs-pR-SwS"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="brJ-cj-8eO" firstAttribute="leading" secondItem="AMc-Xp-FIF" secondAttribute="leading" id="DZt-4Y-vem"/>
+                                <constraint firstAttribute="bottom" secondItem="brJ-cj-8eO" secondAttribute="bottom" id="Lcx-sX-t8S"/>
+                                <constraint firstItem="JjA-cm-mvR" firstAttribute="centerX" secondItem="AMc-Xp-FIF" secondAttribute="centerX" id="N69-HL-evr"/>
+                                <constraint firstAttribute="trailing" secondItem="brJ-cj-8eO" secondAttribute="trailing" id="P5I-gE-dlI"/>
+                                <constraint firstItem="brJ-cj-8eO" firstAttribute="top" secondItem="JjA-cm-mvR" secondAttribute="bottom" constant="9" id="n5m-kF-CtU"/>
+                                <constraint firstItem="JjA-cm-mvR" firstAttribute="top" secondItem="AMc-Xp-FIF" secondAttribute="top" id="wDs-xb-Glq"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNh-TV-eOo">
+                            <rect key="frame" x="111.33333333333333" y="0.0" width="51.666666666666671" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZM-Ut-wzH">
+                                    <rect key="frame" x="10.000000000000014" y="0.0" width="32" height="22.666666666666668"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbg-EE-yRM" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="31.666666666666671" width="50" height="50"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="qbg-EE-yRM" secondAttribute="height" multiplier="1:1" id="1tu-Jf-JuQ"/>
+                                        <constraint firstAttribute="width" constant="50" id="paf-jc-Mmc"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="chooseDay:" destination="-1" eventType="touchUpInside" id="fTl-JN-rb9"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="iZM-Ut-wzH" firstAttribute="top" secondItem="YNh-TV-eOo" secondAttribute="top" id="L3k-G9-03L"/>
+                                <constraint firstAttribute="trailing" secondItem="qbg-EE-yRM" secondAttribute="trailing" id="OKS-CL-LMN"/>
+                                <constraint firstAttribute="bottom" secondItem="qbg-EE-yRM" secondAttribute="bottom" id="SMg-fB-efs"/>
+                                <constraint firstItem="qbg-EE-yRM" firstAttribute="leading" secondItem="YNh-TV-eOo" secondAttribute="leading" id="Unr-eU-ycg"/>
+                                <constraint firstItem="qbg-EE-yRM" firstAttribute="top" secondItem="iZM-Ut-wzH" secondAttribute="bottom" constant="9" id="oak-A7-bBa"/>
+                                <constraint firstItem="iZM-Ut-wzH" firstAttribute="centerX" secondItem="YNh-TV-eOo" secondAttribute="centerX" id="qI0-RO-yaH"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="et5-8P-za1">
+                            <rect key="frame" x="167" y="0.0" width="51.666666666666657" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNy-KA-VQb">
+                                    <rect key="frame" x="13.333333333333343" y="0.0" width="25" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5c-9n-B3A" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="29.999999999999996" width="51.666666666666664" height="51.666666666666657"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="B5c-9n-B3A" secondAttribute="height" multiplier="1:1" id="N4s-TI-foV"/>
+                                        <constraint firstAttribute="width" constant="51.666666666666664" id="epY-UD-Bze"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="chooseDay:" destination="-1" eventType="touchUpInside" id="G9T-dq-Ugl"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="B5c-9n-B3A" secondAttribute="bottom" id="Bf7-X0-CGz"/>
+                                <constraint firstItem="KNy-KA-VQb" firstAttribute="centerX" secondItem="et5-8P-za1" secondAttribute="centerX" id="Ezx-jj-aqm"/>
+                                <constraint firstItem="B5c-9n-B3A" firstAttribute="leading" secondItem="et5-8P-za1" secondAttribute="leading" id="QIW-pZ-d4y"/>
+                                <constraint firstItem="B5c-9n-B3A" firstAttribute="top" secondItem="KNy-KA-VQb" secondAttribute="bottom" constant="9" id="c7c-nI-mjm"/>
+                                <constraint firstItem="KNy-KA-VQb" firstAttribute="top" secondItem="et5-8P-za1" secondAttribute="top" id="odW-a1-Zsr"/>
+                                <constraint firstAttribute="trailing" secondItem="B5c-9n-B3A" secondAttribute="trailing" id="v0m-jg-xSU"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icB-EX-dMD">
+                            <rect key="frame" x="222.66666666666666" y="0.0" width="51.666666666666657" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaM-0S-LAf">
+                                    <rect key="frame" x="18" y="0.0" width="15.666666666666664" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wff-eZ-isc" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="29.999999999999996" width="51.666666666666664" height="51.666666666666657"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="51.666666666666664" id="E6H-tY-gk7"/>
+                                        <constraint firstAttribute="width" secondItem="wff-eZ-isc" secondAttribute="height" multiplier="1:1" id="UGA-KA-HEW"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="chooseDay:" destination="-1" eventType="touchUpInside" id="3sH-NO-Iwl"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="wff-eZ-isc" firstAttribute="top" secondItem="yaM-0S-LAf" secondAttribute="bottom" constant="9" id="CKz-Ay-JTg"/>
+                                <constraint firstAttribute="trailing" secondItem="wff-eZ-isc" secondAttribute="trailing" id="JSl-Wc-SE4"/>
+                                <constraint firstItem="yaM-0S-LAf" firstAttribute="top" secondItem="icB-EX-dMD" secondAttribute="top" id="RRQ-jW-kK4"/>
+                                <constraint firstItem="yaM-0S-LAf" firstAttribute="centerX" secondItem="icB-EX-dMD" secondAttribute="centerX" id="eMC-fb-0b4"/>
+                                <constraint firstAttribute="bottom" secondItem="wff-eZ-isc" secondAttribute="bottom" id="gc7-Nu-F0h"/>
+                                <constraint firstItem="wff-eZ-isc" firstAttribute="leading" secondItem="icB-EX-dMD" secondAttribute="leading" id="zXE-Vt-UXP"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMK-o7-i5L">
+                            <rect key="frame" x="278.33333333333331" y="0.0" width="51.666666666666686" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrS-jF-f6X">
+                                    <rect key="frame" x="14.333333333333369" y="0.0" width="23.333333333333329" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YsX-2t-p8A" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="29.999999999999996" width="51.666666666666664" height="51.666666666666657"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="YsX-2t-p8A" secondAttribute="height" multiplier="1:1" id="Zw8-Ul-eD1"/>
+                                        <constraint firstAttribute="width" constant="51.666666666666664" id="z5v-5v-VsL"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="chooseDay:" destination="-1" eventType="touchUpInside" id="DEQ-iH-yWo"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="YsX-2t-p8A" firstAttribute="leading" secondItem="UMK-o7-i5L" secondAttribute="leading" id="0NU-qM-qsj"/>
+                                <constraint firstAttribute="bottom" secondItem="YsX-2t-p8A" secondAttribute="bottom" id="4lY-6H-jW5"/>
+                                <constraint firstItem="YrS-jF-f6X" firstAttribute="top" secondItem="UMK-o7-i5L" secondAttribute="top" id="AU6-qn-xrp"/>
+                                <constraint firstItem="YrS-jF-f6X" firstAttribute="centerX" secondItem="UMK-o7-i5L" secondAttribute="centerX" id="DQh-ZM-L9c"/>
+                                <constraint firstAttribute="trailing" secondItem="YsX-2t-p8A" secondAttribute="trailing" id="TT9-7z-Cxy"/>
+                                <constraint firstItem="YsX-2t-p8A" firstAttribute="top" secondItem="YrS-jF-f6X" secondAttribute="bottom" constant="9" id="z5q-l8-mIk"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UvF-k3-ElV">
+                            <rect key="frame" x="334" y="0.0" width="51.666666666666686" height="81.666666666666671"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIR-fg-WyO">
+                                    <rect key="frame" x="12.000000000000002" y="0.0" width="27.666666666666671" height="20.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIZ-aU-Frx" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="29.333333333333332" width="52.333333333333336" height="52.333333333333343"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="52.333333333333336" id="5MY-zz-0RY"/>
+                                        <constraint firstAttribute="width" secondItem="ZIZ-aU-Frx" secondAttribute="height" multiplier="1:1" id="hnE-up-aBo"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="chooseDay:" destination="-1" eventType="touchUpInside" id="d8h-Fz-i5I"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="jIR-fg-WyO" firstAttribute="top" secondItem="UvF-k3-ElV" secondAttribute="top" id="HFR-fX-Uxy"/>
+                                <constraint firstItem="ZIZ-aU-Frx" firstAttribute="leading" secondItem="UvF-k3-ElV" secondAttribute="leading" id="J7v-t6-0td"/>
+                                <constraint firstItem="jIR-fg-WyO" firstAttribute="centerX" secondItem="UvF-k3-ElV" secondAttribute="centerX" id="Jxv-5K-tE2"/>
+                                <constraint firstAttribute="trailing" secondItem="ZIZ-aU-Frx" secondAttribute="trailing" id="cga-QD-3RE"/>
+                                <constraint firstItem="ZIZ-aU-Frx" firstAttribute="top" secondItem="jIR-fg-WyO" secondAttribute="bottom" constant="9" id="hKd-Ia-Ooo"/>
+                                <constraint firstAttribute="bottom" secondItem="ZIZ-aU-Frx" secondAttribute="bottom" id="iSH-cl-bWS"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Nw-Hl-aMi">
+                    <rect key="frame" x="0.0" y="755" width="401.66666666666669" height="119"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="671-9z-7GI">
+                            <rect key="frame" x="0.0" y="0.0" width="401.66666666666669" height="77"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M29-4m-fyT">
+                                    <rect key="frame" x="0.0" y="0.0" width="134" height="77"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="addTab"/>
+                                    <connections>
+                                        <action selector="clickedAddHabit:" destination="-1" eventType="touchUpInside" id="LH3-ct-726"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g7-D3-goF">
+                                    <rect key="frame" x="134" y="0.0" width="133.66666666666663" height="77"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="calendarTab"/>
+                                    <connections>
+                                        <action selector="clickedCalendar:" destination="-1" eventType="touchUpInside" id="T2T-m1-ET7"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTf-kH-H4H">
+                                    <rect key="frame" x="267.66666666666669" y="0.0" width="134" height="77"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="settingsTab"/>
+                                    <connections>
+                                        <action selector="clickedSettings:" destination="-1" eventType="touchUpInside" id="iKE-3C-AHz"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="basePurple"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="671-9z-7GI" secondAttribute="bottom" constant="42" id="IWt-Rf-AMU"/>
+                        <constraint firstItem="671-9z-7GI" firstAttribute="leading" secondItem="9Nw-Hl-aMi" secondAttribute="leading" id="Z5t-zJ-GWr"/>
+                        <constraint firstAttribute="trailing" secondItem="671-9z-7GI" secondAttribute="trailing" id="lC8-0f-jlw"/>
+                        <constraint firstAttribute="height" constant="119" id="mVc-QI-Pbe"/>
+                        <constraint firstItem="671-9z-7GI" firstAttribute="top" secondItem="9Nw-Hl-aMi" secondAttribute="top" id="wWz-nq-1Qj"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="enq-qV-rEi"/>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="p1V-5F-RJT" firstAttribute="top" secondItem="enq-qV-rEi" secondAttribute="top" constant="24" id="LJt-SE-pN4"/>
+                <constraint firstAttribute="bottom" secondItem="9Nw-Hl-aMi" secondAttribute="bottom" id="bS3-an-71I"/>
+                <constraint firstItem="enq-qV-rEi" firstAttribute="trailing" secondItem="p1V-5F-RJT" secondAttribute="trailing" constant="8" id="ep8-ig-RHn"/>
+                <constraint firstAttribute="trailing" secondItem="9Nw-Hl-aMi" secondAttribute="trailing" id="gY1-WT-omF"/>
+                <constraint firstItem="p1V-5F-RJT" firstAttribute="leading" secondItem="enq-qV-rEi" secondAttribute="leading" constant="8" id="mfL-SX-cYM"/>
+                <constraint firstItem="9Nw-Hl-aMi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sTL-mr-Bj4"/>
+            </constraints>
+            <point key="canvasLocation" x="67.164179104477611" y="19.221967963386728"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="addTab" width="33" height="33"/>
+        <image name="calendarTab" width="33" height="33"/>
+        <image name="settingsTab" width="33" height="33"/>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="basePurple">
+            <color red="0.4779999852180481" green="0.40000000596046448" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="baseYelow">
+            <color red="0.95300000905990601" green="1" blue="0.51399999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
