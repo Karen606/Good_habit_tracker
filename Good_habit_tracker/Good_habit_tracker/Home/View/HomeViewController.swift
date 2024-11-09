@@ -81,8 +81,6 @@ class HomeViewController: UIViewController {
         for (index, button) in dayButtons.enumerated() {
             button.isSelected = weekDays[index] == viewModel.date
         }
-//        viewModel.partyModel.date = datePicker.date
-//        dateTextField.text = datePicker.date.toString(format: "dd/MM/yyyy h:mma")
     }
     
     @objc func chooseCalendar() {
@@ -124,7 +122,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HabitTableViewCell", for: indexPath) as! HabitTableViewCell
         cell.configure(habit: viewModel.habits[indexPath.section])
         cell.delegate = self
-//        cell.isSelected = viewModel.habits[indexPath.section].executionDays.contains(where: { $0 == HomeViewModel.shared.date })
         return cell
     }
     
@@ -134,6 +131,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         20
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        HabitDetailsViewModel.shared.habitModel = viewModel.habits[indexPath.section]
+        self.pushViewController(HabitDetailsViewController.self)
     }
 }
 
