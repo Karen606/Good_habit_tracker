@@ -27,4 +27,46 @@ extension Date {
         let calendar = Calendar.current
         return calendar.startOfDay(for: self)
     }
+    
+    func getDateIndex() -> Int {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d"
+        let day = formatter.string(from: self.stripTime())
+        return Int(day) ?? 0
+    }
+    
+    var getDayWeek: Int {
+        let calendar = Calendar.current
+        let weekday = calendar.component(.weekday, from: self)
+        return (weekday + 5) % 7
+    }
+    
+    /// Returns the day of the month as an integer (e.g., 1, 15, 31).
+    var getDateDay: Int {
+        let calendar = Calendar.current
+        return calendar.component(.day, from: self)
+    }
+    
+    func getDayNumber(index: Int) -> Int {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d"
+        let dates = getCurrentWeekDays()
+        let day = formatter.string(from: dates[index])
+        return Int(day) ?? 0
+    }
+    
+    func getDayNumberFromDate() -> Int {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d"
+        let day = formatter.string(from: self)
+        return Int(day) ?? 0
+    }
+    
+    func getDateByWeekIndex(index: Int) -> Date {
+        return getCurrentWeekDays()[index]
+    }
+    
+    func getIndexWeekByDate() -> Int? {
+        return getCurrentWeekDays().firstIndex(of: self)
+    }
 }

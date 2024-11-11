@@ -59,7 +59,10 @@ class HabitDetailsViewController: UIViewController {
     }
     @IBAction func clickedReminder(_ sender: UIButton) {
     }
+    
     @IBAction func clickedCalendar(_ sender: UIButton) {
+        HabitPeriodViewModel.shared.habit = viewModel.habitModel
+        self.pushViewController(HabitPeriodViewController.self)
     }
     
     deinit {

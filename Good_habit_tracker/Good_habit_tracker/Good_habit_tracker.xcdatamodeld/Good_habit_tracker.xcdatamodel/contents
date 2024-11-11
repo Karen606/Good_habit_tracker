@@ -4,10 +4,16 @@
         <attribute name="executionDays" optional="YES" attributeType="Transformable" customClassName="[Date]"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="periodDates" optional="YES" attributeType="Transformable" customClassName="[Date]"/>
+        <attribute name="periodMonthly" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
+        <attribute name="periodWeekly" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
     </entity>
     <entity name="MyHabit" representedClassName="MyHabit" syncable="YES" codeGenerationType="class">
         <attribute name="executionDays" optional="YES" attributeType="Transformable" customClassName="[Date]"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="periodDates" optional="YES" attributeType="Transformable" customClassName="[Date]"/>
+        <attribute name="periodMonthly" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
+        <attribute name="periodWeekly" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
     </entity>
 </model>

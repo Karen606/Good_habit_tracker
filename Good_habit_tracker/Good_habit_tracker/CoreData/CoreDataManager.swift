@@ -29,6 +29,9 @@ class CoreDataManager {
                 let newHabitModel = Habit(context: backgroundContext)
                 newHabitModel.id = UUID()
                 newHabitModel.name = habitModel.name
+                newHabitModel.periodWeekly = habitModel.periodWeekly
+                newHabitModel.periodMonthly = habitModel.periodMonthly
+                newHabitModel.periodDates = habitModel.periodDates
             }
             do {
                 try backgroundContext.save()
@@ -52,7 +55,7 @@ class CoreDataManager {
                 let results = try backgroundContext.fetch(fetchRequest)
                 var habitModels: [HabitModel] = []
                 for result in results {
-                    let habitModel = HabitModel(id: result.id, name: result.name)
+                    let habitModel = HabitModel(id: result.id, name: result.name, periodWeekly: result.periodWeekly, periodMonthly: result.periodMonthly, periodDates: result.periodDates)
                     habitModels.append(habitModel)
                 }
                 completion(habitModels, nil)
@@ -101,6 +104,9 @@ class CoreDataManager {
                 let newHabitModel = MyHabit(context: backgroundContext)
                 newHabitModel.id = UUID()
                 newHabitModel.name = habitModel.name
+                newHabitModel.periodWeekly = habitModel.periodWeekly
+                newHabitModel.periodMonthly = habitModel.periodMonthly
+                newHabitModel.periodDates = habitModel.periodDates
             }
             do {
                 try backgroundContext.save()
@@ -124,7 +130,7 @@ class CoreDataManager {
                 let results = try backgroundContext.fetch(fetchRequest)
                 var habitModels: [HabitModel] = []
                 for result in results {
-                    let habitModel = HabitModel(id: result.id, name: result.name, executionDays: result.executionDays ?? [])
+                    let habitModel = HabitModel(id: result.id, name: result.name, executionDays: result.executionDays ?? [], periodWeekly: result.periodWeekly, periodMonthly: result.periodMonthly, periodDates: result.periodDates)
                     habitModels.append(habitModel)
                 }
                 completion(habitModels, nil)
@@ -179,5 +185,35 @@ class CoreDataManager {
             }
         }
     }
+    
+    func updateHabitPeriod(id: UUID, periodWeekly: [Int]?, periodMonthly: [Int]?, periodDates: [Date]?, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<MyHabit> = MyHabit.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let habit = results.first {
+                    habit.periodWeekly = periodWeekly
+                    habit.periodMonthly = periodMonthly
+                    habit.periodDates = periodDates
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(NSError(domain: "com.example.MyApp", code: 404, userInfo: [NSLocalizedDescriptionKey: "Habit not found"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+
 
 }

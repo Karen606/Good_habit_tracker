@@ -45,6 +45,7 @@ class HomeViewController: UIViewController {
             button.setTitle(formatter.string(from: weekDays[index]), for: .normal)
             if weekDays[index] == viewModel.date {
                 button.isSelected = true
+                viewModel.chooseWeekDay(day: index)
             }
         }
         textField.isHidden = true
@@ -81,6 +82,7 @@ class HomeViewController: UIViewController {
         for (index, button) in dayButtons.enumerated() {
             button.isSelected = weekDays[index] == viewModel.date
         }
+        viewModel.chooseDay(day: datePicker.date)
     }
     
     @objc func chooseCalendar() {
@@ -95,7 +97,7 @@ class HomeViewController: UIViewController {
         self.dayButtons.forEach({ $0.isSelected = false })
         sender.isSelected = true
         viewModel.date = weekDays[sender.tag]
-        habitsTableView.reloadData()
+        viewModel.chooseWeekDay(day: sender.tag)
     }
     
     @IBAction func clickedAddHabit(_ sender: UIButton) {
