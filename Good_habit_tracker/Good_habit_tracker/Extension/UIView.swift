@@ -26,6 +26,13 @@ extension UIView {
         layer.masksToBounds = false
     }
     
+    func removeShadow() {
+        layer.shadowColor = nil
+        layer.shadowOffset = CGSize.zero
+        layer.shadowRadius = 0
+        layer.shadowOpacity = 0
+    }
+    
     func addBottomBorder(color: UIColor, thickness: CGFloat) {
         let bottomBorder = CALayer()
         bottomBorder.frame = CGRect(x: 0, y: self.frame.height - thickness, width: self.frame.width, height: thickness)

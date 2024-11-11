@@ -36,7 +36,6 @@ class HomeViewController: UIViewController {
         calendarButton.addTarget(self, action: #selector(chooseCalendar), for: .touchUpInside)
         self.setNavigationTitle(title: "Today")
         self.setNaviagtionCalendarButton(button: calendarButton)
-        self.setNaviagtionArchiveButton(image: .archive)
         titleLabels.forEach({ $0.font = .montserratRegular(size: 16) })
         dayButtons.forEach({ $0.titleLabel?.font = .montserratRegular(size: 20) })
         let formatter = DateFormatter()
@@ -105,6 +104,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func clickedCalendar(_ sender: UIButton) {
+        self.pushViewController(ArchiveViewController.self)
     }
     
     @IBAction func clickedSettings(_ sender: UIButton) {

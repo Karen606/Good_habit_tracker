@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArchiveViewController" customModule="Good_habit_tracker" customModuleProvider="target">
+            <connections>
+                <outlet property="finishButton" destination="IPJ-3n-Pxw" id="7Tt-jT-JdA"/>
+                <outlet property="habitsTableView" destination="UuR-Kz-SJt" id="QA7-KR-brd"/>
+                <outlet property="pauseButton" destination="9KQ-2F-p9Y" id="rQk-zh-ftO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="dayButtons" destination="gBr-Oe-AkV" collectionClass="NSMutableArray" id="zd5-Fq-aha"/>
+                <outletCollection property="dayButtons" destination="upn-Nx-wlg" collectionClass="NSMutableArray" id="N1R-nc-XzC"/>
+                <outletCollection property="dayButtons" destination="kCg-R7-aFO" collectionClass="NSMutableArray" id="K3m-Wn-7jU"/>
+                <outletCollection property="dayButtons" destination="Puq-Je-vk9" collectionClass="NSMutableArray" id="HIL-UI-kkR"/>
+                <outletCollection property="dayButtons" destination="Oar-R1-ax4" collectionClass="NSMutableArray" id="8aO-6g-9Oi"/>
+                <outletCollection property="dayButtons" destination="Ttz-x0-idH" collectionClass="NSMutableArray" id="T9m-9d-CyV"/>
+                <outletCollection property="dayButtons" destination="Cmi-0E-1JA" collectionClass="NSMutableArray" id="Ag2-yJ-TJj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="AcY-J8-3E6">
+                    <rect key="frame" x="8" y="83" width="377" height="82.333333333333314"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcD-eO-q5w">
+                            <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="82.333333333333329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="366-uw-UW9">
+                                    <rect key="frame" x="7.6666666666666679" y="0.0" width="33.666666666666657" height="24.666666666666668"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBr-Oe-AkV" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="33.666666666666671" width="48.666666666666664" height="48.666666666666671"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="gBr-Oe-AkV" secondAttribute="height" multiplier="1:1" id="q9n-04-u13"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="366-uw-UW9" firstAttribute="centerX" secondItem="rcD-eO-q5w" secondAttribute="centerX" id="Z4U-mn-Eb7"/>
+                                <constraint firstAttribute="bottom" secondItem="gBr-Oe-AkV" secondAttribute="bottom" id="aif-TD-YhZ"/>
+                                <constraint firstItem="gBr-Oe-AkV" firstAttribute="leading" secondItem="rcD-eO-q5w" secondAttribute="leading" id="bue-wy-87g"/>
+                                <constraint firstItem="366-uw-UW9" firstAttribute="top" secondItem="rcD-eO-q5w" secondAttribute="top" id="mVe-Ow-bhv"/>
+                                <constraint firstAttribute="trailing" secondItem="gBr-Oe-AkV" secondAttribute="trailing" id="pnZ-t2-m5O"/>
+                                <constraint firstItem="gBr-Oe-AkV" firstAttribute="top" secondItem="366-uw-UW9" secondAttribute="bottom" constant="9" id="wdV-r5-8HR"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OcP-yT-eTB">
+                            <rect key="frame" x="54.666666666666671" y="0.0" width="48.666666666666671" height="82.333333333333329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogE-YH-CfX">
+                                    <rect key="frame" x="12.000000000000009" y="0.0" width="24.666666666666671" height="24.666666666666668"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upn-Nx-wlg" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="33.666666666666671" width="48.666666666666664" height="48.666666666666671"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="upn-Nx-wlg" secondAttribute="height" multiplier="1:1" id="kCC-ZR-k4x"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="ogE-YH-CfX" firstAttribute="centerX" secondItem="OcP-yT-eTB" secondAttribute="centerX" id="2Zu-P8-Iai"/>
+                                <constraint firstItem="upn-Nx-wlg" firstAttribute="top" secondItem="ogE-YH-CfX" secondAttribute="bottom" constant="9" id="434-zp-qsf"/>
+                                <constraint firstItem="upn-Nx-wlg" firstAttribute="leading" secondItem="OcP-yT-eTB" secondAttribute="leading" id="DWc-U9-zgb"/>
+                                <constraint firstItem="ogE-YH-CfX" firstAttribute="top" secondItem="OcP-yT-eTB" secondAttribute="top" id="QNK-4Y-VI4"/>
+                                <constraint firstAttribute="bottom" secondItem="upn-Nx-wlg" secondAttribute="bottom" id="bTw-NN-1HO"/>
+                                <constraint firstAttribute="trailing" secondItem="upn-Nx-wlg" secondAttribute="trailing" id="vvS-e1-dWK"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q9C-b4-ULB">
+                            <rect key="frame" x="109.33333333333333" y="0.0" width="48.666666666666671" height="82.333333333333329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIK-gs-mCl">
+                                    <rect key="frame" x="8.3333333333333428" y="0.0" width="32" height="24.666666666666668"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCg-R7-aFO" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="33.666666666666671" width="48.666666666666664" height="48.666666666666671"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="kCg-R7-aFO" secondAttribute="height" multiplier="1:1" id="YsZ-Mg-Qt3"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="XIK-gs-mCl" firstAttribute="centerX" secondItem="q9C-b4-ULB" secondAttribute="centerX" id="2zi-5N-V8f"/>
+                                <constraint firstItem="kCg-R7-aFO" firstAttribute="top" secondItem="XIK-gs-mCl" secondAttribute="bottom" constant="9" id="6SM-pD-Zgh"/>
+                                <constraint firstItem="kCg-R7-aFO" firstAttribute="leading" secondItem="q9C-b4-ULB" secondAttribute="leading" id="BJ3-vq-KQT"/>
+                                <constraint firstItem="XIK-gs-mCl" firstAttribute="top" secondItem="q9C-b4-ULB" secondAttribute="top" id="bn7-LK-Vcg"/>
+                                <constraint firstAttribute="bottom" secondItem="kCg-R7-aFO" secondAttribute="bottom" id="bu8-MY-sdC"/>
+                                <constraint firstAttribute="trailing" secondItem="kCg-R7-aFO" secondAttribute="trailing" id="pea-If-Qoc"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3d7-ag-JVY">
+                            <rect key="frame" x="164" y="0.0" width="49" height="82.333333333333329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CG7-Br-I6y">
+                                    <rect key="frame" x="12" y="0.0" width="25" height="24.666666666666668"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Puq-Je-vk9" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="33.666666666666671" width="49" height="48.666666666666671"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Puq-Je-vk9" secondAttribute="height" multiplier="1:1" id="Wzq-lC-YCX"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="CG7-Br-I6y" firstAttribute="centerX" secondItem="3d7-ag-JVY" secondAttribute="centerX" id="K0X-bX-t1m"/>
+                                <constraint firstItem="Puq-Je-vk9" firstAttribute="top" secondItem="CG7-Br-I6y" secondAttribute="bottom" constant="9" id="Z3A-3k-JHc"/>
+                                <constraint firstItem="CG7-Br-I6y" firstAttribute="top" secondItem="3d7-ag-JVY" secondAttribute="top" id="ZUd-kO-cKH"/>
+                                <constraint firstItem="Puq-Je-vk9" firstAttribute="leading" secondItem="3d7-ag-JVY" secondAttribute="leading" id="jv0-pq-SPN"/>
+                                <constraint firstAttribute="bottom" secondItem="Puq-Je-vk9" secondAttribute="bottom" id="r0Y-9U-ZBR"/>
+                                <constraint firstAttribute="trailing" secondItem="Puq-Je-vk9" secondAttribute="trailing" id="uwr-GI-r83"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOg-nI-A1J">
+                            <rect key="frame" x="219" y="0.0" width="48.666666666666686" height="82.333333333333329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fri" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABr-Fy-OMF">
+                                    <rect key="frame" x="16.333333333333343" y="0.0" width="15.666666666666664" height="24.666666666666668"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oar-R1-ax4" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="33.666666666666671" width="48.666666666666664" height="48.666666666666671"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Oar-R1-ax4" secondAttribute="height" multiplier="1:1" id="Hkf-8A-YEs"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Oar-R1-ax4" secondAttribute="trailing" id="D4d-ur-l6M"/>
+                                <constraint firstItem="ABr-Fy-OMF" firstAttribute="top" secondItem="XOg-nI-A1J" secondAttribute="top" id="Dec-Us-c4J"/>
+                                <constraint firstItem="Oar-R1-ax4" firstAttribute="leading" secondItem="XOg-nI-A1J" secondAttribute="leading" id="IGh-ae-KUL"/>
+                                <constraint firstItem="Oar-R1-ax4" firstAttribute="top" secondItem="ABr-Fy-OMF" secondAttribute="bottom" constant="9" id="Y6y-vR-ajf"/>
+                                <constraint firstAttribute="bottom" secondItem="Oar-R1-ax4" secondAttribute="bottom" id="krK-ya-c4g"/>
+                                <constraint firstItem="ABr-Fy-OMF" firstAttribute="centerX" secondItem="XOg-nI-A1J" secondAttribute="centerX" id="oD7-Th-23t"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vnl-hd-6QF">
+                            <rect key="frame" x="273.66666666666669" y="0.0" width="48.666666666666686" height="82.333333333333329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cTG-dG-lid">
+                                    <rect key="frame" x="12.666666666666627" y="0.0" width="23.333333333333329" height="24.666666666666668"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ttz-x0-idH" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="33.666666666666671" width="48.666666666666664" height="48.666666666666671"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Ttz-x0-idH" secondAttribute="height" multiplier="1:1" id="3hd-XG-r7B"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Ttz-x0-idH" secondAttribute="bottom" id="5Jg-HB-pwj"/>
+                                <constraint firstItem="cTG-dG-lid" firstAttribute="top" secondItem="Vnl-hd-6QF" secondAttribute="top" id="CkB-5K-STh"/>
+                                <constraint firstItem="cTG-dG-lid" firstAttribute="centerX" secondItem="Vnl-hd-6QF" secondAttribute="centerX" id="e2J-Oo-uTQ"/>
+                                <constraint firstItem="Ttz-x0-idH" firstAttribute="leading" secondItem="Vnl-hd-6QF" secondAttribute="leading" id="nkM-ib-SLv"/>
+                                <constraint firstAttribute="trailing" secondItem="Ttz-x0-idH" secondAttribute="trailing" id="o9D-uN-bEd"/>
+                                <constraint firstItem="Ttz-x0-idH" firstAttribute="top" secondItem="cTG-dG-lid" secondAttribute="bottom" constant="9" id="yfX-Nl-wsC"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCA-Dn-4Kd">
+                            <rect key="frame" x="328.33333333333331" y="0.0" width="48.666666666666686" height="82.333333333333329"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRn-oT-6mX">
+                                    <rect key="frame" x="10.333333333333373" y="0.0" width="27.666666666666671" height="24.666666666666668"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmi-0E-1JA" customClass="DayButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="33.666666666666671" width="48.666666666666664" height="48.666666666666671"/>
+                                    <color key="backgroundColor" name="baseYelow"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Cmi-0E-1JA" secondAttribute="height" multiplier="1:1" id="tFO-5S-rf7"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="23">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Cmi-0E-1JA" secondAttribute="trailing" id="8rK-LF-W4q"/>
+                                <constraint firstItem="Cmi-0E-1JA" firstAttribute="top" secondItem="vRn-oT-6mX" secondAttribute="bottom" constant="9" id="RE5-De-AEM"/>
+                                <constraint firstItem="Cmi-0E-1JA" firstAttribute="leading" secondItem="hCA-Dn-4Kd" secondAttribute="leading" id="SL1-SX-gZC"/>
+                                <constraint firstItem="vRn-oT-6mX" firstAttribute="centerX" secondItem="hCA-Dn-4Kd" secondAttribute="centerX" id="TaP-HL-jiM"/>
+                                <constraint firstAttribute="bottom" secondItem="Cmi-0E-1JA" secondAttribute="bottom" id="a9U-0T-QHI"/>
+                                <constraint firstItem="vRn-oT-6mX" firstAttribute="top" secondItem="hCA-Dn-4Kd" secondAttribute="top" id="o2U-dE-aVn"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-Bk-T7Q">
+                    <rect key="frame" x="30" y="195" width="333" height="52"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KQ-2F-p9Y" customClass="TabButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="155.66666666666666" height="52"/>
+                            <color key="backgroundColor" name="baseYelow"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="jtp-l3-Knj"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="22"/>
+                            <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Pause" image="pause">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected" image="pauseSelected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="choosePauseTab:" destination="-1" eventType="touchUpInside" id="gBJ-mF-UzQ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPJ-3n-Pxw" customClass="TabButton" customModule="Good_habit_tracker" customModuleProvider="target">
+                            <rect key="frame" x="177.66666666666663" y="0.0" width="155.33333333333337" height="52"/>
+                            <color key="backgroundColor" name="baseYelow"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="3AY-eX-fwF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="22"/>
+                            <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Finish" image="finish">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <state key="selected" image="finishSelected">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="chooseFinishTab:" destination="-1" eventType="touchUpInside" id="pV9-Wt-hTI"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UuR-Kz-SJt">
+                    <rect key="frame" x="0.0" y="280" width="393" height="538"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="cj0-qd-zjV"/>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="AcY-J8-3E6" firstAttribute="leading" secondItem="cj0-qd-zjV" secondAttribute="leading" constant="8" id="EHD-Ia-9Uj"/>
+                <constraint firstItem="cj0-qd-zjV" firstAttribute="trailing" secondItem="UuR-Kz-SJt" secondAttribute="trailing" id="Kla-sZ-f5t"/>
+                <constraint firstItem="cj0-qd-zjV" firstAttribute="trailing" secondItem="AcY-J8-3E6" secondAttribute="trailing" constant="8" id="MdF-yF-yDc"/>
+                <constraint firstItem="cj0-qd-zjV" firstAttribute="bottom" secondItem="UuR-Kz-SJt" secondAttribute="bottom" id="SMU-7z-1XH"/>
+                <constraint firstItem="UuR-Kz-SJt" firstAttribute="leading" secondItem="cj0-qd-zjV" secondAttribute="leading" id="TNc-o6-wfE"/>
+                <constraint firstItem="fLu-Bk-T7Q" firstAttribute="top" secondItem="AcY-J8-3E6" secondAttribute="bottom" constant="29.666666666666686" id="U3S-2F-N5q"/>
+                <constraint firstItem="cj0-qd-zjV" firstAttribute="trailing" secondItem="fLu-Bk-T7Q" secondAttribute="trailing" constant="30" id="WzX-tP-wTv"/>
+                <constraint firstItem="fLu-Bk-T7Q" firstAttribute="leading" secondItem="cj0-qd-zjV" secondAttribute="leading" constant="30" id="iDs-MG-9Af"/>
+                <constraint firstItem="UuR-Kz-SJt" firstAttribute="top" secondItem="fLu-Bk-T7Q" secondAttribute="bottom" constant="33" id="sp2-om-jEV"/>
+                <constraint firstItem="AcY-J8-3E6" firstAttribute="top" secondItem="cj0-qd-zjV" secondAttribute="top" constant="24" id="yyG-vz-Wdz"/>
+            </constraints>
+            <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="finish" width="20" height="20"/>
+        <image name="finishSelected" width="20" height="20"/>
+        <image name="pause" width="20" height="20"/>
+        <image name="pauseSelected" width="20" height="20"/>
+        <namedColor name="background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="baseYelow">
+            <color red="0.95300000905990601" green="1" blue="0.51399999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

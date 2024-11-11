@@ -215,5 +215,169 @@ class CoreDataManager {
         }
     }
 
+    func pauseHabit(id: UUID, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<MyHabit> = MyHabit.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                // Fetch the habit to be paused
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let habitToPause = results.first {
+                    // Create a new PausedHabit instance
+                    let pausedHabit = PausedHabit(context: backgroundContext)
+                    pausedHabit.id = habitToPause.id
+                    pausedHabit.name = habitToPause.name
+                    pausedHabit.executionDays = habitToPause.executionDays
+                    pausedHabit.periodWeekly = habitToPause.periodWeekly
+                    pausedHabit.periodMonthly = habitToPause.periodMonthly
+                    pausedHabit.periodDates = habitToPause.periodDates
+                    
+                    // Delete the habit from MyHabit
+                    backgroundContext.delete(habitToPause)
+                    
+                    // Save the changes
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                } else {
+                    // Habit not found
+                    DispatchQueue.main.async {
+                        completion(NSError(domain: "com.example.MyApp", code: 404, userInfo: [NSLocalizedDescriptionKey: "Habit not found"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+
+    func stopHabit(id: UUID, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<MyHabit> = MyHabit.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                // Fetch the habit to be stopped
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let habitToStop = results.first {
+                    // Create a new StoppedHabit instance
+                    let stoppedHabit = StoppedHabit(context: backgroundContext)
+                    stoppedHabit.id = habitToStop.id
+                    stoppedHabit.name = habitToStop.name
+                    stoppedHabit.executionDays = habitToStop.executionDays
+                    stoppedHabit.periodWeekly = habitToStop.periodWeekly
+                    stoppedHabit.periodMonthly = habitToStop.periodMonthly
+                    stoppedHabit.periodDates = habitToStop.periodDates
+                    
+                    // Delete the habit from MyHabit
+                    backgroundContext.delete(habitToStop)
+                    
+                    // Save the changes
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                } else {
+                    // Habit not found
+                    DispatchQueue.main.async {
+                        completion(NSError(domain: "com.example.MyApp", code: 404, userInfo: [NSLocalizedDescriptionKey: "Habit not found"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+    
+    func fetchPausedHabits(completion: @escaping ([HabitModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<PausedHabit> = PausedHabit.fetchRequest()
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var habitModels: [HabitModel] = []
+                for result in results {
+                    let habitModel = HabitModel(id: result.id, name: result.name, executionDays: result.executionDays ?? [], periodWeekly: result.periodWeekly, periodMonthly: result.periodMonthly, periodDates: result.periodDates)
+                    habitModels.append(habitModel)
+                }
+                completion(habitModels, nil)
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
+    
+    func fetchStoppedHabits(completion: @escaping ([HabitModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<StoppedHabit> = StoppedHabit.fetchRequest()
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var habitModels: [HabitModel] = []
+                for result in results {
+                    let habitModel = HabitModel(id: result.id, name: result.name, executionDays: result.executionDays ?? [], periodWeekly: result.periodWeekly, periodMonthly: result.periodMonthly, periodDates: result.periodDates)
+                    habitModels.append(habitModel)
+                }
+                completion(habitModels, nil)
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
+
+    func startHabit(id: UUID, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<PausedHabit> = PausedHabit.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                // Fetch the habit to be started
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let habitToStart = results.first {
+                    // Create a new MyHabit instance
+                    let myHabit = MyHabit(context: backgroundContext)
+                    myHabit.id = habitToStart.id
+                    myHabit.name = habitToStart.name
+                    myHabit.executionDays = habitToStart.executionDays
+                    myHabit.periodWeekly = habitToStart.periodWeekly
+                    myHabit.periodMonthly = habitToStart.periodMonthly
+                    myHabit.periodDates = habitToStart.periodDates
+                    
+                    // Delete the habit from PausedHabit
+                    backgroundContext.delete(habitToStart)
+                    
+                    // Save the changes
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                } else {
+                    // Habit not found
+                    DispatchQueue.main.async {
+                        completion(NSError(domain: "com.example.MyApp", code: 404, userInfo: [NSLocalizedDescriptionKey: "Habit not found in PausedHabit"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
 
 }

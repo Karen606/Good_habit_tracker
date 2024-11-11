@@ -43,7 +43,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="51.666666666666664" height="81.666666666666671"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lt-TJ-xf0">
-                                    <rect key="frame" x="9" y="0.0" width="33.666666666666657" height="21"/>
+                                    <rect key="frame" x="9" y="0.0" width="33.666666666666664" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" name="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -307,7 +307,7 @@
                         </view>
                     </subviews>
                 </stackView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MPw-Ce-cb3">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MPw-Ce-cb3">
                     <rect key="frame" x="0.0" y="191.66666666666669" width="402" height="555.33333333333326"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
@@ -328,7 +328,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4g7-D3-goF">
                                     <rect key="frame" x="134" y="0.0" width="134" height="77"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" image="calendarTab"/>
+                                    <state key="normal" image="archive"/>
                                     <connections>
                                         <action selector="clickedCalendar:" destination="-1" eventType="touchUpInside" id="T2T-m1-ET7"/>
                                     </connections>
@@ -373,7 +373,7 @@
     </objects>
     <resources>
         <image name="addTab" width="33" height="33"/>
-        <image name="calendarTab" width="33" height="33"/>
+        <image name="archive" width="24" height="24"/>
         <image name="settingsTab" width="33" height="33"/>
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

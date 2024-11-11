@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="83" id="KGk-i7-Jjw" customClass="ArchiveTableViewCell" customModule="Good_habit_tracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-Tr-Hwo">
+                        <rect key="frame" x="30" y="0.0" width="260" height="66"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmF-dX-J7o">
+                                <rect key="frame" x="24" y="0.0" width="177" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="66" id="Gez-qB-npS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-zd-c1Z">
+                                <rect key="frame" x="209" y="15.666666666666664" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="CXw-yG-haU"/>
+                                    <constraint firstAttribute="height" constant="35" id="RSd-zn-oJj"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="pauseSelected"/>
+                                <connections>
+                                    <action selector="clickedStart:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Su0-g2-Vbr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="n4t-zd-c1Z" secondAttribute="trailing" constant="16" id="1DH-xj-P1t"/>
+                            <constraint firstAttribute="bottom" secondItem="NmF-dX-J7o" secondAttribute="bottom" id="J2y-0x-7IM"/>
+                            <constraint firstItem="n4t-zd-c1Z" firstAttribute="centerY" secondItem="JEb-Tr-Hwo" secondAttribute="centerY" id="Vpl-yw-lPX"/>
+                            <constraint firstItem="NmF-dX-J7o" firstAttribute="top" secondItem="JEb-Tr-Hwo" secondAttribute="top" id="e6K-bs-A8P"/>
+                            <constraint firstItem="NmF-dX-J7o" firstAttribute="leading" secondItem="JEb-Tr-Hwo" secondAttribute="leading" constant="24" id="jiJ-Xd-Tma"/>
+                            <constraint firstItem="n4t-zd-c1Z" firstAttribute="leading" secondItem="NmF-dX-J7o" secondAttribute="trailing" constant="8" symbolic="YES" id="z0c-oT-7wb"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="16"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JEb-Tr-Hwo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="78A-XN-7Gn"/>
+                    <constraint firstAttribute="trailing" secondItem="JEb-Tr-Hwo" secondAttribute="trailing" constant="30" id="GmD-vv-Ywh"/>
+                    <constraint firstAttribute="bottom" secondItem="JEb-Tr-Hwo" secondAttribute="bottom" id="H56-yt-mrp"/>
+                    <constraint firstItem="JEb-Tr-Hwo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cF7-Dp-zzP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bgView" destination="JEb-Tr-Hwo" id="u2E-Ab-Vxh"/>
+                <outlet property="nameLabel" destination="NmF-dX-J7o" id="Qoc-Mq-cqb"/>
+                <outlet property="startButton" destination="n4t-zd-c1Z" id="r1W-vR-Cfm"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="33.450704225352112"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="pauseSelected" width="20" height="20"/>
+    </resources>
+</document>

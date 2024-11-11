@@ -27,13 +27,6 @@ extension UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
     }
     
-    func setNaviagtionArchiveButton(image: UIImage) {
-        let archiveButton = UIButton(type: .custom)
-        archiveButton.setImage(UIImage.archive, for: .normal)
-        archiveButton.addTarget(self, action: #selector(clickedArchive), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: archiveButton)
-    }
-    
     func setNaviagtionCalendarButton(button: UIButton) {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
     }

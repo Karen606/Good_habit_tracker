@@ -22,7 +22,6 @@ class HabitFormViewController: UIViewController {
     
     func setupUI() {
         setNavigationTitle(title: "Today")
-        setNaviagtionArchiveButton(image: .archive)
         setNaviagtionBackButton(image: .backButton)
         habitTextField.delegate = self
         nextButton.isEnabled = viewModel.habit.name.checkValidation()

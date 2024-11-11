@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4F6EF48A250CB45D3817663D /* Pods_Good_habit_tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB45E3926E97F0BCFF1E9BD5 /* Pods_Good_habit_tracker.framework */; };
+		6B27495F2CE296D2002ECE2A /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27495E2CE296D2002ECE2A /* TabButton.swift */; };
+		6B2749622CE29874002ECE2A /* ArchiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2749612CE29874002ECE2A /* ArchiveViewModel.swift */; };
+		6B2749662CE29B17002ECE2A /* ArchiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2749642CE29B17002ECE2A /* ArchiveTableViewCell.swift */; };
+		6B2749672CE29B17002ECE2A /* ArchiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2749652CE29B17002ECE2A /* ArchiveTableViewCell.xib */; };
+		6B2749692CE2A4E4002ECE2A /* BaseSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2749682CE2A4E4002ECE2A /* BaseSwitch.swift */; };
 		6B8CD0572CE0FF4800C820FD /* HabitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8CD01A2CE0FF4800C820FD /* HabitCollectionViewCell.xib */; };
 		6B8CD0582CE0FF4800C820FD /* CreateHabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8CD01F2CE0FF4800C820FD /* CreateHabitViewController.xib */; };
 		6B8CD0592CE0FF4800C820FD /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B8CD0252CE0FF4800C820FD /* Inter-Regular.ttf */; };
@@ -50,9 +55,18 @@
 		6B8CD0832CE0FF7E00C820FD /* HabitPeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8CD0812CE0FF7E00C820FD /* HabitPeriodViewController.swift */; };
 		6B8CD0842CE0FF7E00C820FD /* HabitPeriodViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8CD0822CE0FF7E00C820FD /* HabitPeriodViewController.xib */; };
 		6B8CD0872CE1092000C820FD /* HabitPeriodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8CD0862CE1092000C820FD /* HabitPeriodViewModel.swift */; };
+		6BF8856C2CE26F340000AC0B /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8856A2CE26F340000AC0B /* AlertViewController.swift */; };
+		6BF8856D2CE26F340000AC0B /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BF8856B2CE26F340000AC0B /* AlertViewController.xib */; };
+		6BF885732CE291E70000AC0B /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF885712CE291E70000AC0B /* ArchiveViewController.swift */; };
+		6BF885742CE291E70000AC0B /* ArchiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6BF885722CE291E70000AC0B /* ArchiveViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B27495E2CE296D2002ECE2A /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		6B2749612CE29874002ECE2A /* ArchiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewModel.swift; sourceTree = "<group>"; };
+		6B2749642CE29B17002ECE2A /* ArchiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTableViewCell.swift; sourceTree = "<group>"; };
+		6B2749652CE29B17002ECE2A /* ArchiveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveTableViewCell.xib; sourceTree = "<group>"; };
+		6B2749682CE2A4E4002ECE2A /* BaseSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSwitch.swift; sourceTree = "<group>"; };
 		6B7B60E92CDCDE57007F45FF /* Good_habit_tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Good_habit_tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8CD0172CE0FF4800C820FD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6B8CD0192CE0FF4800C820FD /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -97,6 +111,10 @@
 		6B8CD0812CE0FF7E00C820FD /* HabitPeriodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitPeriodViewController.swift; sourceTree = "<group>"; };
 		6B8CD0822CE0FF7E00C820FD /* HabitPeriodViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitPeriodViewController.xib; sourceTree = "<group>"; };
 		6B8CD0862CE1092000C820FD /* HabitPeriodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitPeriodViewModel.swift; sourceTree = "<group>"; };
+		6BF8856A2CE26F340000AC0B /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		6BF8856B2CE26F340000AC0B /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
+		6BF885712CE291E70000AC0B /* ArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
+		6BF885722CE291E70000AC0B /* ArchiveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveViewController.xib; sourceTree = "<group>"; };
 		9710BC2B011632BBC282C900 /* Pods-Good_habit_tracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good_habit_tracker.debug.xcconfig"; path = "Target Support Files/Pods-Good_habit_tracker/Pods-Good_habit_tracker.debug.xcconfig"; sourceTree = "<group>"; };
 		BB45E3926E97F0BCFF1E9BD5 /* Pods_Good_habit_tracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Good_habit_tracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBE97FBBD7DDA1773D3255D0 /* Pods-Good_habit_tracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good_habit_tracker.release.xcconfig"; path = "Target Support Files/Pods-Good_habit_tracker/Pods-Good_habit_tracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +138,23 @@
 				BB45E3926E97F0BCFF1E9BD5 /* Pods_Good_habit_tracker.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B2749602CE29853002ECE2A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6B2749612CE29874002ECE2A /* ArchiveViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6B2749632CE29B09002ECE2A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6B2749642CE29B17002ECE2A /* ArchiveTableViewCell.swift */,
+				6B2749652CE29B17002ECE2A /* ArchiveTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		6B7B60E02CDCDE57007F45FF = {
@@ -212,10 +247,12 @@
 				6B8CD02A2CE0FF4800C820FD /* Font */,
 				6B8CD02B2CE0FF4800C820FD /* BaseButton.swift */,
 				6B8CD02C2CE0FF4800C820FD /* BaseTextField.swift */,
+				6B27495E2CE296D2002ECE2A /* TabButton.swift */,
 				6B8CD02D2CE0FF4800C820FD /* Date.swift */,
 				6B8CD02E2CE0FF4800C820FD /* DayButton.swift */,
 				6B8CD02F2CE0FF4800C820FD /* DefaultHabit.swift */,
 				6B8CD0302CE0FF4800C820FD /* String.swift */,
+				6B2749682CE2A4E4002ECE2A /* BaseSwitch.swift */,
 				6B8CD0312CE0FF4800C820FD /* UIView.swift */,
 				6B8CD0322CE0FF4800C820FD /* ViewController.swift */,
 			);
@@ -330,6 +367,8 @@
 		6B8CD0552CE0FF4800C820FD /* Good_habit_tracker */ = {
 			isa = PBXGroup;
 			children = (
+				6BF8856E2CE275670000AC0B /* Archive */,
+				6BF885692CE26F1C0000AC0B /* Alert */,
 				6B8CD07F2CE0FF4F00C820FD /* HabitPeriod */,
 				6B8CD0182CE0FF4800C820FD /* CoreData */,
 				6B8CD0232CE0FF4800C820FD /* CreateHabit */,
@@ -372,6 +411,34 @@
 				6B8CD0862CE1092000C820FD /* HabitPeriodViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6BF885692CE26F1C0000AC0B /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				6BF8856A2CE26F340000AC0B /* AlertViewController.swift */,
+				6BF8856B2CE26F340000AC0B /* AlertViewController.xib */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		6BF8856E2CE275670000AC0B /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				6B2749632CE29B09002ECE2A /* Cell */,
+				6B2749602CE29853002ECE2A /* ViewModel */,
+				6BF885702CE291D70000AC0B /* View */,
+			);
+			path = Archive;
+			sourceTree = "<group>";
+		};
+		6BF885702CE291D70000AC0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6BF885712CE291E70000AC0B /* ArchiveViewController.swift */,
+				6BF885722CE291E70000AC0B /* ArchiveViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D125D5A28BC1C5118CD661CF /* Pods */ = {
@@ -450,7 +517,9 @@
 				6B8CD05A2CE0FF4800C820FD /* Montserrat-Medium.ttf in Resources */,
 				6B8CD05B2CE0FF4800C820FD /* Montserrat-Regular.ttf in Resources */,
 				6B8CD05C2CE0FF4800C820FD /* MontserratAlternates-Medium.ttf in Resources */,
+				6B2749672CE29B17002ECE2A /* ArchiveTableViewCell.xib in Resources */,
 				6B8CD05D2CE0FF4800C820FD /* MontserratAlternates-Regular.ttf in Resources */,
+				6BF885742CE291E70000AC0B /* ArchiveViewController.xib in Resources */,
 				6B8CD05E2CE0FF4800C820FD /* HabitDetailsViewController.xib in Resources */,
 				6B8CD05F2CE0FF4800C820FD /* HabitFormViewController.xib in Resources */,
 				6B8CD0602CE0FF4800C820FD /* HabitTableViewCell.xib in Resources */,
@@ -459,6 +528,7 @@
 				6B8CD0622CE0FF4800C820FD /* Root.storyboard in Resources */,
 				6B8CD0632CE0FF4800C820FD /* Assets.xcassets in Resources */,
 				6B8CD0652CE0FF4800C820FD /* LaunchScreen.storyboard in Resources */,
+				6BF8856D2CE26F340000AC0B /* AlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,25 +584,31 @@
 				6B8CD0662CE0FF4800C820FD /* CoreDataManager.swift in Sources */,
 				6B8CD0672CE0FF4800C820FD /* HabitCollectionViewCell.swift in Sources */,
 				6B8CD0682CE0FF4800C820FD /* HabitModel.swift in Sources */,
+				6B27495F2CE296D2002ECE2A /* TabButton.swift in Sources */,
 				6B8CD0692CE0FF4800C820FD /* CreateHabitViewController.swift in Sources */,
 				6B8CD06A2CE0FF4800C820FD /* CreateHabitViewModel.swift in Sources */,
 				6B8CD06B2CE0FF4800C820FD /* Font.swift in Sources */,
+				6B2749622CE29874002ECE2A /* ArchiveViewModel.swift in Sources */,
 				6B8CD06C2CE0FF4800C820FD /* BaseButton.swift in Sources */,
 				6B8CD06D2CE0FF4800C820FD /* BaseTextField.swift in Sources */,
 				6B8CD06E2CE0FF4800C820FD /* Date.swift in Sources */,
 				6B8CD06F2CE0FF4800C820FD /* DayButton.swift in Sources */,
+				6B2749692CE2A4E4002ECE2A /* BaseSwitch.swift in Sources */,
 				6B8CD0702CE0FF4800C820FD /* DefaultHabit.swift in Sources */,
 				6B8CD0712CE0FF4800C820FD /* String.swift in Sources */,
 				6B8CD0722CE0FF4800C820FD /* UIView.swift in Sources */,
 				6B8CD0732CE0FF4800C820FD /* ViewController.swift in Sources */,
 				6B8CD0742CE0FF4800C820FD /* HabitDetailsViewController.swift in Sources */,
+				6BF8856C2CE26F340000AC0B /* AlertViewController.swift in Sources */,
 				6B8CD0752CE0FF4800C820FD /* HabitDetailsViewModel.swift in Sources */,
+				6BF885732CE291E70000AC0B /* ArchiveViewController.swift in Sources */,
 				6B8CD0762CE0FF4800C820FD /* HabitFormViewController.swift in Sources */,
 				6B8CD0772CE0FF4800C820FD /* HabitFormViewModel.swift in Sources */,
 				6B8CD0872CE1092000C820FD /* HabitPeriodViewModel.swift in Sources */,
 				6B8CD0782CE0FF4800C820FD /* HabitTableViewCell.swift in Sources */,
 				6B8CD0792CE0FF4800C820FD /* HomeViewController.swift in Sources */,
 				6B8CD07A2CE0FF4800C820FD /* HomeViewModel.swift in Sources */,
+				6B2749662CE29B17002ECE2A /* ArchiveTableViewCell.swift in Sources */,
 				6B8CD07B2CE0FF4800C820FD /* RootViewController.swift in Sources */,
 				6B8CD0832CE0FF7E00C820FD /* HabitPeriodViewController.swift in Sources */,
 				6B8CD07C2CE0FF4800C820FD /* AppDelegate.swift in Sources */,

@@ -48,15 +48,55 @@ class HabitDetailsViewController: UIViewController {
                 guard let self = self, let habit = habitModel else { return }
                 self.setNavigationTitle(title: habit.name ?? "")
                 self.habitLabel.text = habit.name
-                self.executionsLabel.text = "\(habit.executionDays.count)"
+                let executions = habit.executionDays.count
+                let gaps = viewModel.getUnexecutedDays()
+                self.executionsLabel.text = "\(executions)"
+                self.gapsCountLabel.text = "\(gaps)"
+                var percent = executions * 100 / (executions + gaps)
+                if percent > 100 {
+                    percent = 100
+                }
+                self.percentLabel.text = "\(percent)%"
             }
             .store(in: &cancellables)
     }
 
     @IBAction func clickedPause(_ sender: UIButton) {
+        let alertVC = AlertViewController(nibName: "AlertViewController", bundle: nil)
+        alertVC.isPause = true
+        alertVC.modalPresentationStyle = .overFullScreen
+        alertVC.completion = { [weak self] in
+            guard let self = self else { return }
+            viewModel.pauseHabit { [weak self] error in
+                guard let self = self else { return }
+                if let error = error {
+                    self.showErrorAlert(message: error.localizedDescription)
+                } else {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
+        self.present(alertVC, animated: false)
     }
+    
     @IBAction func clickedFinish(_ sender: UIButton) {
+        let alertVC = AlertViewController(nibName: "AlertViewController", bundle: nil)
+        alertVC.isPause = false
+        alertVC.modalPresentationStyle = .overFullScreen
+        alertVC.completion = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.finishHabit { [weak self] error in
+                guard let self = self else { return }
+                if let error = error {
+                    self.showErrorAlert(message: error.localizedDescription)
+                } else {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
+        self.present(alertVC, animated: false)
     }
+    
     @IBAction func clickedReminder(_ sender: UIButton) {
     }
     
