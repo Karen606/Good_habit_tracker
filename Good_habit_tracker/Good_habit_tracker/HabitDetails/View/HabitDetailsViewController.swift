@@ -17,6 +17,8 @@ class HabitDetailsViewController: UIViewController {
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet var dayButtons: [DayButton]!
+    @IBOutlet weak var passLabel: UILabel!
+    @IBOutlet weak var executionsTitleLabel: UILabel!
     private let datePicker = UIDatePicker()
     private let textField = UITextField()
 
@@ -29,6 +31,13 @@ class HabitDetailsViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         subscribe()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        passLabel.isHidden = !UserDefaults.standard.bool(forKey: "isMissedEnabled")
+        gapsCountLabel.isHidden = !UserDefaults.standard.bool(forKey: "isMissedEnabled")
+        executionsLabel.isHidden = !UserDefaults.standard.bool(forKey: "isCompletedEnabled")
+        executionsTitleLabel.isHidden = !UserDefaults.standard.bool(forKey: "isCompletedEnabled")
     }
     
     func setupUI() {

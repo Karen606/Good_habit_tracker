@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet var dayButtons: [DayButton]!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var habitsTableView: UITableView!
+    @IBOutlet weak var archiveButton: UIButton!
     private let weekDays = Date().getCurrentWeekDays()
     private let datePicker = UIDatePicker()
     private let textField = UITextField()
@@ -29,6 +30,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         viewModel.fetchData()
+        archiveButton.isHidden = !UserDefaults.standard.bool(forKey: "isArchiveEnabled")
     }
     
     func setupUI() {
@@ -103,7 +105,7 @@ class HomeViewController: UIViewController {
         self.pushViewController(CreateHabitViewController.self)
     }
     
-    @IBAction func clickedCalendar(_ sender: UIButton) {
+    @IBAction func clickedArchive(_ sender: UIButton) {
         self.pushViewController(ArchiveViewController.self)
     }
     

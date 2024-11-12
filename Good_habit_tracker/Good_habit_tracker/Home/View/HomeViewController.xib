@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Good_habit_tracker" customModuleProvider="target">
             <connections>
+                <outlet property="archiveButton" destination="4g7-D3-goF" id="FzT-OL-If4"/>
                 <outlet property="bottomView" destination="9Nw-Hl-aMi" id="Mej-Gj-MRN"/>
                 <outlet property="habitsTableView" destination="MPw-Ce-cb3" id="hhf-d7-nua"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -330,7 +331,7 @@
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" image="archive"/>
                                     <connections>
-                                        <action selector="clickedCalendar:" destination="-1" eventType="touchUpInside" id="T2T-m1-ET7"/>
+                                        <action selector="clickedArchive:" destination="-1" eventType="touchUpInside" id="ePL-ft-Zgn"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTf-kH-H4H">
@@ -373,7 +374,7 @@
     </objects>
     <resources>
         <image name="addTab" width="33" height="33"/>
-        <image name="archive" width="24" height="24"/>
+        <image name="archive" width="33" height="33"/>
         <image name="settingsTab" width="33" height="33"/>
         <namedColor name="background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
