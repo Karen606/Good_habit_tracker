@@ -13,6 +13,9 @@
 		6B2749662CE29B17002ECE2A /* ArchiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2749642CE29B17002ECE2A /* ArchiveTableViewCell.swift */; };
 		6B2749672CE29B17002ECE2A /* ArchiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2749652CE29B17002ECE2A /* ArchiveTableViewCell.xib */; };
 		6B2749692CE2A4E4002ECE2A /* BaseSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2749682CE2A4E4002ECE2A /* BaseSwitch.swift */; };
+		6B27496E2CE2A555002ECE2A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B27496C2CE2A555002ECE2A /* SettingsViewController.swift */; };
+		6B27496F2CE2A555002ECE2A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B27496D2CE2A555002ECE2A /* SettingsViewController.xib */; };
+		6B2749722CE2AC0E002ECE2A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2749712CE2AC0E002ECE2A /* NotificationManager.swift */; };
 		6B8CD0572CE0FF4800C820FD /* HabitCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8CD01A2CE0FF4800C820FD /* HabitCollectionViewCell.xib */; };
 		6B8CD0582CE0FF4800C820FD /* CreateHabitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8CD01F2CE0FF4800C820FD /* CreateHabitViewController.xib */; };
 		6B8CD0592CE0FF4800C820FD /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B8CD0252CE0FF4800C820FD /* Inter-Regular.ttf */; };
@@ -67,6 +70,9 @@
 		6B2749642CE29B17002ECE2A /* ArchiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTableViewCell.swift; sourceTree = "<group>"; };
 		6B2749652CE29B17002ECE2A /* ArchiveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveTableViewCell.xib; sourceTree = "<group>"; };
 		6B2749682CE2A4E4002ECE2A /* BaseSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSwitch.swift; sourceTree = "<group>"; };
+		6B27496C2CE2A555002ECE2A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6B27496D2CE2A555002ECE2A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		6B2749712CE2AC0E002ECE2A /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		6B7B60E92CDCDE57007F45FF /* Good_habit_tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Good_habit_tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8CD0172CE0FF4800C820FD /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		6B8CD0192CE0FF4800C820FD /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -155,6 +161,31 @@
 				6B2749652CE29B17002ECE2A /* ArchiveTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		6B27496A2CE2A53F002ECE2A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6B27496B2CE2A545002ECE2A /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		6B27496B2CE2A545002ECE2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B27496C2CE2A555002ECE2A /* SettingsViewController.swift */,
+				6B27496D2CE2A555002ECE2A /* SettingsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B2749702CE2AC04002ECE2A /* NotificationManager */ = {
+			isa = PBXGroup;
+			children = (
+				6B2749712CE2AC0E002ECE2A /* NotificationManager.swift */,
+			);
+			path = NotificationManager;
 			sourceTree = "<group>";
 		};
 		6B7B60E02CDCDE57007F45FF = {
@@ -320,13 +351,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		6B8CD0432CE0FF4800C820FD /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		6B8CD0462CE0FF4800C820FD /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,7 +372,6 @@
 			isa = PBXGroup;
 			children = (
 				6B8CD0422CE0FF4800C820FD /* Cell */,
-				6B8CD0432CE0FF4800C820FD /* Model */,
 				6B8CD0462CE0FF4800C820FD /* View */,
 				6B8CD0482CE0FF4800C820FD /* ViewModel */,
 			);
@@ -367,6 +390,8 @@
 		6B8CD0552CE0FF4800C820FD /* Good_habit_tracker */ = {
 			isa = PBXGroup;
 			children = (
+				6B2749702CE2AC04002ECE2A /* NotificationManager */,
+				6B27496A2CE2A53F002ECE2A /* Settings */,
 				6BF8856E2CE275670000AC0B /* Archive */,
 				6BF885692CE26F1C0000AC0B /* Alert */,
 				6B8CD07F2CE0FF4F00C820FD /* HabitPeriod */,
@@ -521,6 +546,7 @@
 				6B8CD05D2CE0FF4800C820FD /* MontserratAlternates-Regular.ttf in Resources */,
 				6BF885742CE291E70000AC0B /* ArchiveViewController.xib in Resources */,
 				6B8CD05E2CE0FF4800C820FD /* HabitDetailsViewController.xib in Resources */,
+				6B27496F2CE2A555002ECE2A /* SettingsViewController.xib in Resources */,
 				6B8CD05F2CE0FF4800C820FD /* HabitFormViewController.xib in Resources */,
 				6B8CD0602CE0FF4800C820FD /* HabitTableViewCell.xib in Resources */,
 				6B8CD0612CE0FF4800C820FD /* HomeViewController.xib in Resources */,
@@ -610,8 +636,10 @@
 				6B8CD07A2CE0FF4800C820FD /* HomeViewModel.swift in Sources */,
 				6B2749662CE29B17002ECE2A /* ArchiveTableViewCell.swift in Sources */,
 				6B8CD07B2CE0FF4800C820FD /* RootViewController.swift in Sources */,
+				6B27496E2CE2A555002ECE2A /* SettingsViewController.swift in Sources */,
 				6B8CD0832CE0FF7E00C820FD /* HabitPeriodViewController.swift in Sources */,
 				6B8CD07C2CE0FF4800C820FD /* AppDelegate.swift in Sources */,
+				6B2749722CE2AC0E002ECE2A /* NotificationManager.swift in Sources */,
 				6B8CD07D2CE0FF4800C820FD /* Good_habit_tracker.xcdatamodeld in Sources */,
 				6B8CD07E2CE0FF4800C820FD /* SceneDelegate.swift in Sources */,
 			);

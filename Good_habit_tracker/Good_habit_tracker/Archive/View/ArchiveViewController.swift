@@ -96,12 +96,13 @@ extension ArchiveViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ArchiveViewController: ArchiveTableViewDelegate {
-    func start(id: UUID) {
-        viewModel.resumeHabit(id: id) { [weak self] error in
+    func start(habit: HabitModel) {
+        viewModel.resumeHabit(id: habit.id ?? UUID()) { [weak self] error in
             guard let self = self else { return }
             if let error = error {
                 self.showErrorAlert(message: error.localizedDescription)
             } else {
+                NotificationManager.shared.scheduleNotifications(habitModel: habit)
                 self.viewModel.fetchData()
             }
         }

@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
         if !hasLaunchedBefore {
+            UserDefaults.standard.set(true, forKey: "isArchiveEnabled")
+            UserDefaults.standard.set(true, forKey: "isCompletedEnabled")
+            UserDefaults.standard.set(true, forKey: "isMissedEnabled")
             CoreDataManager.shared.addDefaultHabits(habitModels: DefaultHabit.habits) { error in
                 UserDefaults.standard.set((error == nil), forKey: "hasLaunchedBefore")
             }

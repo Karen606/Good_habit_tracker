@@ -17,10 +17,14 @@ class HabitDetailsViewController: UIViewController {
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet var dayButtons: [DayButton]!
+    private let datePicker = UIDatePicker()
+    private let textField = UITextField()
+
     private let weekDays = Date().getCurrentWeekDays()
     private let viewModel = HabitDetailsViewModel.shared
     private var cancellables: Set<AnyCancellable> = []
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -39,6 +43,16 @@ class HabitDetailsViewController: UIViewController {
         }
         pauseButton.addShadow()
         finishButton.addShadow()
+        textField.isHidden = true
+        view.addSubview(textField)
+        textField.inputView = datePicker
+        datePicker.datePickerMode = .countDownTimer
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dateChanged))
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil) // Adds spacing
+        toolbar.setItems([space, doneButton], animated: false)
+        textField.inputAccessoryView = toolbar
     }
     
     func subscribe() {
@@ -60,6 +74,25 @@ class HabitDetailsViewController: UIViewController {
             }
             .store(in: &cancellables)
     }
+    
+    @IBAction func handleTapGesture(_ sender: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+        textField.resignFirstResponder()
+    }
+    
+    @objc func dateChanged() {
+        textField.resignFirstResponder()
+        viewModel.habitModel?.reminderTime = datePicker.date
+        viewModel.setReminderDate(time: datePicker.date)
+    }
+    
+    @objc func chooseCalendar() {
+        if textField.isFirstResponder {
+            textField.resignFirstResponder()
+        } else {
+            textField.becomeFirstResponder()
+        }
+    }
 
     @IBAction func clickedPause(_ sender: UIButton) {
         let alertVC = AlertViewController(nibName: "AlertViewController", bundle: nil)
@@ -72,6 +105,7 @@ class HabitDetailsViewController: UIViewController {
                 if let error = error {
                     self.showErrorAlert(message: error.localizedDescription)
                 } else {
+                    NotificationManager.shared.cancelNotifications(for: viewModel.habitModel?.id?.uuidString ?? UUID().uuidString)
                     self.navigationController?.popViewController(animated: true)
                 }
             }
@@ -90,6 +124,7 @@ class HabitDetailsViewController: UIViewController {
                 if let error = error {
                     self.showErrorAlert(message: error.localizedDescription)
                 } else {
+                    NotificationManager.shared.cancelNotifications(for: viewModel.habitModel?.id?.uuidString ?? UUID().uuidString)
                     self.navigationController?.popViewController(animated: true)
                 }
             }
@@ -98,6 +133,12 @@ class HabitDetailsViewController: UIViewController {
     }
     
     @IBAction func clickedReminder(_ sender: UIButton) {
+        if textField.isFirstResponder {
+            textField.resignFirstResponder()
+        } else {
+            textField.becomeFirstResponder()
+        }
+
     }
     
     @IBAction func clickedCalendar(_ sender: UIButton) {

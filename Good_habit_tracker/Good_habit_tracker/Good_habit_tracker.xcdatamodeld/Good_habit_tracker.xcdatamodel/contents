@@ -7,6 +7,7 @@
         <attribute name="periodDates" optional="YES" attributeType="Transformable" customClassName="[Date]"/>
         <attribute name="periodMonthly" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
         <attribute name="periodWeekly" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
+        <attribute name="reminderTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="MyHabit" representedClassName="MyHabit" syncable="YES" codeGenerationType="class">
         <attribute name="executionDays" optional="YES" attributeType="Transformable" customClassName="[Date]"/>
@@ -15,6 +16,7 @@
         <attribute name="periodDates" optional="YES" attributeType="Transformable" customClassName="[Date]"/>
         <attribute name="periodMonthly" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
         <attribute name="periodWeekly" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
+        <attribute name="reminderTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="PausedHabit" representedClassName="PausedHabit" syncable="YES" codeGenerationType="class">
         <attribute name="executionDays" optional="YES" attributeType="Transformable" customClassName="[Date]"/>
@@ -23,6 +25,7 @@
         <attribute name="periodDates" optional="YES" attributeType="Transformable" customClassName="[Date]"/>
         <attribute name="periodMonthly" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
         <attribute name="periodWeekly" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
+        <attribute name="reminderTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <entity name="StoppedHabit" representedClassName="StoppedHabit" syncable="YES" codeGenerationType="class">
         <attribute name="executionDays" optional="YES" attributeType="Transformable" customClassName="[Date]"/>
@@ -31,5 +34,6 @@
         <attribute name="periodDates" optional="YES" attributeType="Transformable" customClassName="[Date]"/>
         <attribute name="periodMonthly" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
         <attribute name="periodWeekly" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
+        <attribute name="reminderTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
 </model>

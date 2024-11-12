@@ -489,6 +489,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="gYV-xS-n2g"/>
             <color key="backgroundColor" name="background"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="hlc-JX-ive" firstAttribute="top" secondItem="JBn-n2-Agl" secondAttribute="bottom" constant="53" id="2lf-KF-0pf"/>
                 <constraint firstItem="rKI-Ee-Eat" firstAttribute="top" secondItem="gYV-xS-n2g" secondAttribute="top" constant="24" id="6y0-Lk-eTs"/>
@@ -513,8 +514,16 @@
                 <constraint firstItem="rKI-Ee-Eat" firstAttribute="leading" secondItem="gYV-xS-n2g" secondAttribute="leading" constant="9" id="qaA-xp-JBT"/>
                 <constraint firstAttribute="trailing" secondItem="JBn-n2-Agl" secondAttribute="trailing" constant="30" id="uY9-Pp-2Z2"/>
             </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="93F-2Z-RCM" appends="YES" id="noF-9Z-3DD"/>
+            </connections>
             <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
         </view>
+        <tapGestureRecognizer id="93F-2Z-RCM">
+            <connections>
+                <action selector="handleTapGesture:" destination="-1" id="i8K-iD-71E"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="calendarSmall" width="24" height="24"/>
@@ -529,7 +538,7 @@
             <color red="0.4779999852180481" green="0.40000000596046448" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="baseYelow">
-            <color red="0.95300000905990601" green="1" blue="0.51399999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.95294117647058818" green="1" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

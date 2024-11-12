@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ArchiveTableViewDelegate: AnyObject {
-    func start(id: UUID)
+    func start(habit: HabitModel)
 }
 
 class ArchiveTableViewCell: UITableViewCell {
@@ -16,7 +16,7 @@ class ArchiveTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var bgView: UIView!
-    private var id: UUID?
+    private var habit: HabitModel?
     weak var delegate: ArchiveTableViewDelegate?
     
     override func awakeFromNib() {
@@ -29,14 +29,14 @@ class ArchiveTableViewCell: UITableViewCell {
     }
     
     func configure(habit: HabitModel, tab: Section) {
-        id = habit.id
+        self.habit = habit
         nameLabel.text = habit.name
         startButton.isHidden = tab == .finish
     }
     
     @IBAction func clickedStart(_ sender: UIButton) {
-        guard let id = id else { return }
-        delegate?.start(id: id)
+        guard let habit = habit else { return }
+        delegate?.start(habit: habit)
     }
     
 }

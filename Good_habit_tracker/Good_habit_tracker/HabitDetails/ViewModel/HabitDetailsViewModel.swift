@@ -26,6 +26,12 @@ class HabitDetailsViewModel {
         CoreDataManager.shared.stopHabit(id: id, completion: completion)
     }
     
+    func setReminderDate(time: Date) {
+        guard let id = habitModel?.id else { return }
+        CoreDataManager.shared.setHabitReminder(id: id, reminderTime: time)
+        NotificationManager.shared.scheduleNotifications(habitModel: habitModel)
+    }
+    
     func getUnexecutedDays() -> Int {
         guard let habit = habitModel else { return 0 }
         let calendar = Calendar.current

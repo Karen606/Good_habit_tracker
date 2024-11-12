@@ -108,6 +108,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func clickedSettings(_ sender: UIButton) {
+        self.pushViewController(SettingsViewController.self)
     }
 }
 

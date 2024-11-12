@@ -32,6 +32,7 @@ class CoreDataManager {
                 newHabitModel.periodWeekly = habitModel.periodWeekly
                 newHabitModel.periodMonthly = habitModel.periodMonthly
                 newHabitModel.periodDates = habitModel.periodDates
+                newHabitModel.reminderTime = habitModel.reminderTime
             }
             do {
                 try backgroundContext.save()
@@ -55,7 +56,7 @@ class CoreDataManager {
                 let results = try backgroundContext.fetch(fetchRequest)
                 var habitModels: [HabitModel] = []
                 for result in results {
-                    let habitModel = HabitModel(id: result.id, name: result.name, periodWeekly: result.periodWeekly, periodMonthly: result.periodMonthly, periodDates: result.periodDates)
+                    let habitModel = HabitModel(id: result.id, name: result.name, periodWeekly: result.periodWeekly, periodMonthly: result.periodMonthly, periodDates: result.periodDates, reminderTime: result.reminderTime)
                     habitModels.append(habitModel)
                 }
                 completion(habitModels, nil)
@@ -85,13 +86,7 @@ class CoreDataManager {
 
                 // Save the context to persist the changes
                 try backgroundContext.save()
-//                DispatchQueue.main.async {
-//                    completion(nil)
-//                }
             } catch {
-//                DispatchQueue.main.async {
-//                    completion(error)
-//                }
             }
         }
     }
@@ -107,6 +102,7 @@ class CoreDataManager {
                 newHabitModel.periodWeekly = habitModel.periodWeekly
                 newHabitModel.periodMonthly = habitModel.periodMonthly
                 newHabitModel.periodDates = habitModel.periodDates
+                newHabitModel.reminderTime = habitModel.reminderTime
             }
             do {
                 try backgroundContext.save()
@@ -130,7 +126,7 @@ class CoreDataManager {
                 let results = try backgroundContext.fetch(fetchRequest)
                 var habitModels: [HabitModel] = []
                 for result in results {
-                    let habitModel = HabitModel(id: result.id, name: result.name, executionDays: result.executionDays ?? [], periodWeekly: result.periodWeekly, periodMonthly: result.periodMonthly, periodDates: result.periodDates)
+                    let habitModel = HabitModel(id: result.id, name: result.name, executionDays: result.executionDays ?? [], periodWeekly: result.periodWeekly, periodMonthly: result.periodMonthly, periodDates: result.periodDates, reminderTime: result.reminderTime)
                     habitModels.append(habitModel)
                 }
                 completion(habitModels, nil)
@@ -154,26 +150,21 @@ class CoreDataManager {
                     var executionDays = habit.executionDays ?? []
                     
                     if isPerform {
-                        // Add the date if it's not already in the array
                         if !executionDays.contains(date) {
                             executionDays.append(date)
                         }
                     } else {
-                        // Remove the date if it exists in the array
                         if let index = executionDays.firstIndex(of: date) {
                             executionDays.remove(at: index)
                         }
                     }
                     
                     habit.executionDays = executionDays
-                    
-                    // Save the changes
                     try backgroundContext.save()
                     DispatchQueue.main.async {
                         completion(nil)
                     }
                 } else {
-                    // Habit not found
                     DispatchQueue.main.async {
                         completion(NSError(domain: "CoreDataManager", code: 404, userInfo: [NSLocalizedDescriptionKey: "Habit not found"]))
                     }
@@ -214,6 +205,23 @@ class CoreDataManager {
             }
         }
     }
+    
+    func setHabitReminder(id: UUID, reminderTime: Date) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<MyHabit> = MyHabit.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let habit = results.first {
+                    habit.reminderTime = reminderTime
+                    try backgroundContext.save()
+                }
+            } catch {
+            }
+        }
+    }
 
     func pauseHabit(id: UUID, completion: @escaping (Error?) -> Void) {
         let backgroundContext = persistentContainer.newBackgroundContext()
@@ -222,10 +230,8 @@ class CoreDataManager {
             fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
             
             do {
-                // Fetch the habit to be paused
                 let results = try backgroundContext.fetch(fetchRequest)
                 if let habitToPause = results.first {
-                    // Create a new PausedHabit instance
                     let pausedHabit = PausedHabit(context: backgroundContext)
                     pausedHabit.id = habitToPause.id
                     pausedHabit.name = habitToPause.name
@@ -233,17 +239,14 @@ class CoreDataManager {
                     pausedHabit.periodWeekly = habitToPause.periodWeekly
                     pausedHabit.periodMonthly = habitToPause.periodMonthly
                     pausedHabit.periodDates = habitToPause.periodDates
-                    
-                    // Delete the habit from MyHabit
+                    pausedHabit.reminderTime = habitToPause.reminderTime
                     backgroundContext.delete(habitToPause)
                     
-                    // Save the changes
                     try backgroundContext.save()
                     DispatchQueue.main.async {
                         completion(nil)
                     }
                 } else {
-                    // Habit not found
                     DispatchQueue.main.async {
                         completion(NSError(domain: "com.example.MyApp", code: 404, userInfo: [NSLocalizedDescriptionKey: "Habit not found"]))
                     }
@@ -263,10 +266,8 @@ class CoreDataManager {
             fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
             
             do {
-                // Fetch the habit to be stopped
                 let results = try backgroundContext.fetch(fetchRequest)
                 if let habitToStop = results.first {
-                    // Create a new StoppedHabit instance
                     let stoppedHabit = StoppedHabit(context: backgroundContext)
                     stoppedHabit.id = habitToStop.id
                     stoppedHabit.name = habitToStop.name
@@ -274,17 +275,14 @@ class CoreDataManager {
                     stoppedHabit.periodWeekly = habitToStop.periodWeekly
                     stoppedHabit.periodMonthly = habitToStop.periodMonthly
                     stoppedHabit.periodDates = habitToStop.periodDates
-                    
-                    // Delete the habit from MyHabit
+                    stoppedHabit.reminderTime = habitToStop.reminderTime
                     backgroundContext.delete(habitToStop)
                     
-                    // Save the changes
                     try backgroundContext.save()
                     DispatchQueue.main.async {
                         completion(nil)
                     }
                 } else {
-                    // Habit not found
                     DispatchQueue.main.async {
                         completion(NSError(domain: "com.example.MyApp", code: 404, userInfo: [NSLocalizedDescriptionKey: "Habit not found"]))
                     }
@@ -306,7 +304,7 @@ class CoreDataManager {
                 let results = try backgroundContext.fetch(fetchRequest)
                 var habitModels: [HabitModel] = []
                 for result in results {
-                    let habitModel = HabitModel(id: result.id, name: result.name, executionDays: result.executionDays ?? [], periodWeekly: result.periodWeekly, periodMonthly: result.periodMonthly, periodDates: result.periodDates)
+                    let habitModel = HabitModel(id: result.id, name: result.name, executionDays: result.executionDays ?? [], periodWeekly: result.periodWeekly, periodMonthly: result.periodMonthly, periodDates: result.periodDates, reminderTime: result.reminderTime)
                     habitModels.append(habitModel)
                 }
                 completion(habitModels, nil)
@@ -327,7 +325,7 @@ class CoreDataManager {
                 let results = try backgroundContext.fetch(fetchRequest)
                 var habitModels: [HabitModel] = []
                 for result in results {
-                    let habitModel = HabitModel(id: result.id, name: result.name, executionDays: result.executionDays ?? [], periodWeekly: result.periodWeekly, periodMonthly: result.periodMonthly, periodDates: result.periodDates)
+                    let habitModel = HabitModel(id: result.id, name: result.name, executionDays: result.executionDays ?? [], periodWeekly: result.periodWeekly, periodMonthly: result.periodMonthly, periodDates: result.periodDates, reminderTime: result.reminderTime)
                     habitModels.append(habitModel)
                 }
                 completion(habitModels, nil)
@@ -346,10 +344,8 @@ class CoreDataManager {
             fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
             
             do {
-                // Fetch the habit to be started
                 let results = try backgroundContext.fetch(fetchRequest)
                 if let habitToStart = results.first {
-                    // Create a new MyHabit instance
                     let myHabit = MyHabit(context: backgroundContext)
                     myHabit.id = habitToStart.id
                     myHabit.name = habitToStart.name
@@ -357,17 +353,14 @@ class CoreDataManager {
                     myHabit.periodWeekly = habitToStart.periodWeekly
                     myHabit.periodMonthly = habitToStart.periodMonthly
                     myHabit.periodDates = habitToStart.periodDates
-                    
-                    // Delete the habit from PausedHabit
+                    myHabit.reminderTime = habitToStart.reminderTime
                     backgroundContext.delete(habitToStart)
                     
-                    // Save the changes
                     try backgroundContext.save()
                     DispatchQueue.main.async {
                         completion(nil)
                     }
                 } else {
-                    // Habit not found
                     DispatchQueue.main.async {
                         completion(NSError(domain: "com.example.MyApp", code: 404, userInfo: [NSLocalizedDescriptionKey: "Habit not found in PausedHabit"]))
                     }

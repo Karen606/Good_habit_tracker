@@ -15,4 +15,5 @@ struct HabitModel {
     var periodWeekly: [Int]? = [0,1,2,3,4,5,6]
     var periodMonthly: [Int]?
     var periodDates: [Date]?
+    var reminderTime: Date?
 }
